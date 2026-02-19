@@ -46,7 +46,7 @@ Complete step-by-step installation instructions for all platforms.
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/yourusername/Schneider-AI-Code-Reviewer.git
+git clone https://github.com/ShriHarsan64K/Schneider-AI-Code-Reviewer.git
 cd Schneider-AI-Code-Reviewer
 ```
 
@@ -125,7 +125,7 @@ python3 --version
 
 #### Step 2: Clone Repository
 ```bash
-git clone https://github.com/yourusername/Schneider-AI-Code-Reviewer.git
+git clone https://github.com/ShriHarsan64K/Schneider-AI-Code-Reviewer.git
 cd Schneider-AI-Code-Reviewer
 ```
 
@@ -675,4 +675,4 @@ Congratulations! You've successfully installed Schneider Electric AI Code Review
 ---
 
 *Last Updated: February 19, 2026*  
-*For latest installation instructions, see: https://github.com/yourusername/Schneider-AI-Code-Reviewer*
+*For latest installation instructions, see: https://github.com/ShriHarsan64K/Schneider-AI-Code-Reviewer*
