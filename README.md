@@ -1,6 +1,6 @@
 # 🚀 Schneider Electric AI Code Reviewer
 
-[![Version](https://img.shields.io/badge/version-8.0.0-blue.svg)](https://github.com/yourusername/Schneider-AI-Code-Reviewer)
+[![Version](https://img.shields.io/badge/version-8.0.0-blue.svg)](https://github.com/ShriHarsan64K/Schneider-AI-Code-Reviewer)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Languages](https://img.shields.io/badge/languages-7-orange.svg)](#supported-languages)
 [![Rules](https://img.shields.io/badge/rules-558-red.svg)](#rule-database)
@@ -143,7 +143,7 @@ An **intelligent VSCode extension** that:
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/yourusername/Schneider-AI-Code-Reviewer.git
+git clone https://github.com/ShriHarsan64K/Schneider-AI-Code-Reviewer.git
 cd Schneider-AI-Code-Reviewer
 ```
 
@@ -444,7 +444,7 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 
 ```bash
 # Clone your fork
-git clone https://github.com/yourusername/Schneider-AI-Code-Reviewer.git
+git clone https://github.com/ShriHarsan64K/Schneider-AI-Code-Reviewer.git
 cd Schneider-AI-Code-Reviewer
 
 # Install backend dependencies
@@ -479,18 +479,18 @@ in the Software without restriction...
 
 ## 📞 Contact
 
-**Project Repository:** https://github.com/yourusername/Schneider-AI-Code-Reviewer
+**Project Repository:** https://github.com/ShriHarsan64K/Schneider-AI-Code-Reviewer
 
-**Issues & Bugs:** https://github.com/yourusername/Schneider-AI-Code-Reviewer/issues
+**Issues & Bugs:** https://github.com/ShriHarsan64K/Schneider-AI-Code-Reviewer/issues
 
-**Discussions:** https://github.com/yourusername/Schneider-AI-Code-Reviewer/discussions
+**Discussions:** https://github.com/ShriHarsan64K/Schneider-AI-Code-Reviewer/discussions
 
-**Email:** schneider-ai-support@example.com
+**Email:** shriharsang@gmail.com
 
 **Team:**
-- [Your Name] - Project Lead & Full Stack Development
-- [Team Member 2] - Backend & AI Integration
-- [Team Member 3] - Frontend & UI/UX
+- Shri Harsan - Project Lead & Full Stack Development
+- Divya, Sravya - Backend & AI Integration
+- Ishita, Saniya - Frontend & UI/UX
 
 ---
 
@@ -539,10 +539,10 @@ in the Software without restriction...
 
 ## 📈 Statistics
 
-![GitHub Stars](https://img.shields.io/github/stars/yourusername/Schneider-AI-Code-Reviewer?style=social)
-![GitHub Forks](https://img.shields.io/github/forks/yourusername/Schneider-AI-Code-Reviewer?style=social)
-![GitHub Issues](https://img.shields.io/github/issues/yourusername/Schneider-AI-Code-Reviewer)
-![GitHub Pull Requests](https://img.shields.io/github/issues-pr/yourusername/Schneider-AI-Code-Reviewer)
+![GitHub Stars](https://img.shields.io/github/stars/ShriHarsan64K/Schneider-AI-Code-Reviewer?style=social)
+![GitHub Forks](https://img.shields.io/github/forks/ShriHarsan64K/Schneider-AI-Code-Reviewer?style=social)
+![GitHub Issues](https://img.shields.io/github/issues/ShriHarsan64K/Schneider-AI-Code-Reviewer)
+![GitHub Pull Requests](https://img.shields.io/github/issues-pr/ShriHarsan64K/Schneider-AI-Code-Reviewer)
 
 ---
 
