@@ -1,0 +1,128 @@
+[
+  {
+    "rule_id": "CPP-DOC-001",
+    "rule": "Use Doxygen-style comments for all classes, methods, and functions",
+    "severity": "error",
+    "category": "documentation",
+    "suggested_fix": "Add /** @brief Description @param x Parameter @return Return value */ comments"
+  },
+  {
+    "rule_id": "CPP-DOC-002",
+    "rule": "Document class member variables with inline comments",
+    "severity": "warning",
+    "category": "documentation",
+    "suggested_fix": "Add comments after member declarations: int count; ///< Number of items"
+  },
+  {
+    "rule_id": "CPP-NAMESPACE-001",
+    "rule": "Never use 'using namespace std;' in header files",
+    "severity": "critical",
+    "category": "best_practice",
+    "suggested_fix": "Remove 'using namespace std;' from headers and use std:: prefix explicitly"
+  },
+  {
+    "rule_id": "CPP-NAMESPACE-002",
+    "rule": "Prefer explicit namespace qualifiers over 'using' directives in implementation files",
+    "severity": "warning",
+    "category": "best_practice",
+    "suggested_fix": "Use std::cout instead of 'using namespace std;' to avoid naming conflicts"
+  },
+  {
+    "rule_id": "CPP-CONST-001",
+    "rule": "Use const references for function parameters when passing non-primitive types",
+    "severity": "warning",
+    "category": "performance",
+    "suggested_fix": "Change 'void func(std::string s)' to 'void func(const std::string& s)'"
+  },
+  {
+    "rule_id": "CPP-CONST-002",
+    "rule": "Mark member functions as const when they don't modify the object",
+    "severity": "warning",
+    "category": "best_practice",
+    "suggested_fix": "Add const after method signature: int getValue() const { return value; }"
+  },
+  {
+    "rule_id": "CPP-NAMING-001",
+    "rule": "Use PascalCase for class names and camelCase for method names",
+    "severity": "warning",
+    "category": "style",
+    "suggested_fix": "Class names: EnergyCalculator, method names: calculatePower(), variables: motorSpeed"
+  },
+  {
+    "rule_id": "CPP-NAMING-002",
+    "rule": "Use descriptive names - avoid single letter variables except for loop counters",
+    "severity": "warning",
+    "category": "readability",
+    "suggested_fix": "Replace 'int t' with 'int temperature' or 'double p' with 'double power'"
+  },
+  {
+    "rule_id": "CPP-ACCESS-001",
+    "rule": "Always specify access modifiers (public, private, protected) explicitly",
+    "severity": "warning",
+    "category": "best_practice",
+    "suggested_fix": "Add public:/private:/protected: sections to all classes"
+  },
+  {
+    "rule_id": "CPP-ACCESS-002",
+    "rule": "Make data members private and provide getters/setters as needed",
+    "severity": "warning",
+    "category": "encapsulation",
+    "suggested_fix": "Move public data members to private section and add public accessor methods"
+  },
+  {
+    "rule_id": "CPP-SECURITY-001",
+    "rule": "No hardcoded passwords, API keys, or secrets",
+    "severity": "critical",
+    "category": "security",
+    "suggested_fix": "Move sensitive data to configuration files or environment variables"
+  },
+  {
+    "rule_id": "CPP-MEMORY-001",
+    "rule": "Prefer smart pointers (unique_ptr, shared_ptr) over raw pointers",
+    "severity": "warning",
+    "category": "modern_cpp",
+    "suggested_fix": "Replace 'int* ptr = new int' with 'auto ptr = std::make_unique<int>()'"
+  },
+  {
+    "rule_id": "CPP-MEMORY-002",
+    "rule": "Implement Rule of Three/Five for classes managing resources",
+    "severity": "error",
+    "category": "resource_management",
+    "suggested_fix": "If class has destructor, also implement copy constructor, copy assignment, move constructor, move assignment"
+  },
+  {
+    "rule_id": "CPP-AUTO-001",
+    "rule": "Use auto for complex type declarations when type is obvious from context",
+    "severity": "info",
+    "category": "modern_cpp",
+    "suggested_fix": "Replace 'std::vector<int>::iterator it' with 'auto it' when initializing from begin()"
+  },
+  {
+    "rule_id": "CPP-NULLPTR-001",
+    "rule": "Use nullptr instead of NULL or 0 for null pointers",
+    "severity": "warning",
+    "category": "modern_cpp",
+    "suggested_fix": "Replace 'ptr = NULL' with 'ptr = nullptr'"
+  },
+  {
+    "rule_id": "CPP-OVERRIDE-001",
+    "rule": "Mark overriding virtual functions with 'override' keyword",
+    "severity": "error",
+    "category": "safety",
+    "suggested_fix": "Add 'override' to virtual function declarations: void func() override;"
+  },
+  {
+    "rule_id": "CPP-INIT-001",
+    "rule": "Use member initializer lists instead of assignment in constructors",
+    "severity": "warning",
+    "category": "performance",
+    "suggested_fix": "Constructor() : member1(value1), member2(value2) { } instead of assigning in body"
+  },
+  {
+    "rule_id": "CPP-RANGE-001",
+    "rule": "Use range-based for loops when iterating over containers",
+    "severity": "info",
+    "category": "modern_cpp",
+    "suggested_fix": "Replace 'for(int i=0; i<vec.size(); i++)' with 'for(const auto& elem : vec)'"
+  }
+]

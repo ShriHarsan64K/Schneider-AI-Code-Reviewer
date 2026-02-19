@@ -1,0 +1,273 @@
+{
+  "name": "schneider-ai-code-reviewer",
+  "displayName": "Schneider Electric AI Code Reviewer",
+  "description": "AI-Powered Code Review for Schneider Electric - Energy, Security, and Quality Analysis with IEC 61131-3 Standards",
+  "version": "8.0.0",
+  "publisher": "schneider-electric",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Linters",
+    "Programming Languages",
+    "Machine Learning",
+    "Testing",
+    "Other"
+  ],
+  "keywords": [
+    "schneider",
+    "ai",
+    "code-review",
+    "python",
+    "structured-text",
+    "energy-efficiency",
+    "iec-61131-3",
+    "plc",
+    "automation",
+    "quality",
+    "security"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "schneider-ai-view",
+          "title": "Schneider AI",
+          "icon": "$(pulse)"
+        }
+      ]
+    },
+    "views": {
+      "schneider-ai-view": [
+        {
+          "type": "webview",
+          "id": "schneider-ai-assistant",
+          "name": "AI Assistant",
+          "contextualTitle": "Schneider Electric Code Review",
+          "icon": "$(comment-discussion)",
+          "visibility": "visible"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "schneider.startAnalysis",
+        "title": "Analyze Code",
+        "category": "Schneider AI",
+        "icon": "$(search)"
+      },
+      {
+        "command": "schneider.generateReport",
+        "title": "Generate PDF Audit Report",
+        "category": "Schneider AI",
+        "icon": "$(file-pdf)"
+      },
+      {
+        "command": "schneider.clearApiKey",
+        "title": "View Backend Info",
+        "category": "Schneider AI",
+        "icon": "$(info)"
+      },
+      {
+        "command": "schneider.openDashboard",
+        "title": "Open Rule Engine Dashboard",
+        "category": "Schneider AI",
+        "icon": "$(dashboard)"
+      },
+      {
+        "command": "schneider.checkHealth",
+        "title": "Check Backend Health",
+        "category": "Schneider AI",
+        "icon": "$(pulse)"
+      },
+      {
+        "command": "schneider.viewHistory",
+        "title": "View Analysis History",
+        "category": "Schneider AI",
+        "icon": "$(history)"
+      },
+      {
+        "command": "schneider.clearHistory",
+        "title": "Clear Analysis History",
+        "category": "Schneider AI",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "schneider.exportAnalysis",
+        "title": "Export Current Analysis (JSON)",
+        "category": "Schneider AI",
+        "icon": "$(export)"
+      },
+      {
+        "command": "schneider.showStatistics",
+        "title": "View System Statistics",
+        "category": "Schneider AI",
+        "icon": "$(graph)"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "schneider.startAnalysis"
+        },
+        {
+          "command": "schneider.generateReport"
+        },
+        {
+          "command": "schneider.clearApiKey"
+        },
+        {
+          "command": "schneider.openDashboard"
+        },
+        {
+          "command": "schneider.checkHealth"
+        },
+        {
+          "command": "schneider.viewHistory"
+        },
+        {
+          "command": "schneider.clearHistory"
+        },
+        {
+          "command": "schneider.exportAnalysis"
+        },
+        {
+          "command": "schneider.showStatistics"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "schneider.startAnalysis",
+          "group": "schneider@1",
+          "when": "resourceExtname =~ /\\.(py|st|js|jsx|ts|tsx|c|cpp|h|hpp|java)$/"
+        },
+        {
+          "command": "schneider.generateReport",
+          "group": "schneider@2",
+          "when": "resourceExtname =~ /\\.(py|st|js|jsx|ts|tsx|c|cpp|h|hpp|java)$/"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "schneider.startAnalysis",
+          "when": "view == schneider-ai-assistant",
+          "group": "navigation@1"
+        },
+        {
+          "command": "schneider.generateReport",
+          "when": "view == schneider-ai-assistant",
+          "group": "navigation@2"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Schneider AI Code Review",
+      "properties": {
+        "schneiderAI.serverUrl": {
+          "type": "string",
+          "default": "http://localhost:5000",
+          "description": "Python backend server URL for code analysis",
+          "order": 1
+        },
+        "schneiderAI.streamlitUrl": {
+          "type": "string",
+          "default": "https://k7bjmvlbxtd8ieetznyoyy.streamlit.app/",
+          "description": "Streamlit Rule Engine Dashboard URL",
+          "order": 2
+        },
+        "schneiderAI.autoAnalyzeOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically analyze files when saved (Note: This may impact performance for large files)",
+          "order": 3
+        },
+        "schneiderAI.maxFileSize": {
+          "type": "number",
+          "default": 1000,
+          "description": "Maximum file size (in lines) to analyze automatically",
+          "minimum": 100,
+          "maximum": 10000,
+          "order": 4
+        },
+        "schneiderAI.showInlineErrors": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show inline error diagnostics in the editor",
+          "order": 5
+        },
+        "schneiderAI.enableNotifications": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show notification messages for analysis results",
+          "order": 6
+        },
+        "schneiderAI.scoreThreshold": {
+          "type": "number",
+          "default": 70,
+          "description": "Minimum acceptable code quality score (0-100)",
+          "minimum": 0,
+          "maximum": 100,
+          "order": 7
+        },
+        "schneiderAI.enableHistory": {
+          "type": "boolean",
+          "default": true,
+          "description": "Save analysis history for tracking improvements over time",
+          "order": 8
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "schneider.startAnalysis",
+        "key": "ctrl+shift+s",
+        "mac": "cmd+shift+s",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "schneider.generateReport",
+        "key": "ctrl+shift+r",
+        "mac": "cmd+shift+r"
+      },
+      {
+        "command": "schneider.viewHistory",
+        "key": "ctrl+shift+h",
+        "mac": "cmd+shift+h"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package",
+    "deploy": "vsce publish"
+  },
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "@vscode/test-electron": "^2.3.8",
+    "@vscode/vsce": "^2.22.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ShriHarsan64K/Schneider-AI-Code-Reviewer"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ShriHarsan64K/Schneider-AI-Code-Reviewer/issues"
+  },
+  "homepage": "https://github.com/ShriHarsan64K/Schneider-AI-Code-Reviewer#readme"
+}

@@ -1,0 +1,128 @@
+[
+  {
+    "rule_id": "PY-DOC-001",
+    "rule": "All functions and classes must have docstrings explaining purpose, parameters, and return values",
+    "severity": "error",
+    "category": "documentation",
+    "suggested_fix": "Add triple-quoted docstrings with Args:, Returns:, and Raises: sections"
+  },
+  {
+    "rule_id": "PY-DOC-002",
+    "rule": "Use Google or NumPy style docstrings consistently throughout the codebase",
+    "severity": "warning",
+    "category": "documentation",
+    "suggested_fix": "Follow Google style: Args:\\n    param (type): description\\nReturns:\\n    type: description"
+  },
+  {
+    "rule_id": "PY-TYPE-001",
+    "rule": "Use type hints for all function parameters and return values",
+    "severity": "warning",
+    "category": "type_safety",
+    "suggested_fix": "Add type annotations: def calculate(voltage: int, current: int) -> int:"
+  },
+  {
+    "rule_id": "PY-TYPE-002",
+    "rule": "Use typing module for complex types (List, Dict, Optional, Union)",
+    "severity": "warning",
+    "category": "type_safety",
+    "suggested_fix": "Import from typing: from typing import List, Dict, Optional and use List[int], Dict[str, int]"
+  },
+  {
+    "rule_id": "PY-NAMING-001",
+    "rule": "Use snake_case for functions and variables, PascalCase for classes, UPPER_CASE for constants",
+    "severity": "warning",
+    "category": "style",
+    "suggested_fix": "Functions: calculate_power(), variables: motor_speed, classes: EnergyMonitor, constants: MAX_VOLTAGE"
+  },
+  {
+    "rule_id": "PY-NAMING-002",
+    "rule": "Avoid single-letter variable names except for loop counters",
+    "severity": "warning",
+    "category": "readability",
+    "suggested_fix": "Use descriptive names: replace 'v' with 'voltage', 'p' with 'power'"
+  },
+  {
+    "rule_id": "PY-IMPORT-001",
+    "rule": "Remove unused imports",
+    "severity": "warning",
+    "category": "code_quality",
+    "suggested_fix": "Delete import statements that aren't used anywhere in the file"
+  },
+  {
+    "rule_id": "PY-IMPORT-002",
+    "rule": "Group imports: stdlib, third-party, local - separated by blank lines",
+    "severity": "warning",
+    "category": "style",
+    "suggested_fix": "Organize imports in order: standard library, then third-party, then local modules"
+  },
+  {
+    "rule_id": "PY-SECURITY-001",
+    "rule": "No hardcoded passwords, API keys, or secrets in code",
+    "severity": "critical",
+    "category": "security",
+    "suggested_fix": "Use environment variables (os.getenv) or config files for sensitive data"
+  },
+  {
+    "rule_id": "PY-EXCEPTION-001",
+    "rule": "Don't use bare except: clauses - catch specific exceptions",
+    "severity": "error",
+    "category": "error_handling",
+    "suggested_fix": "Replace 'except:' with 'except ValueError:' or specific exception types"
+  },
+  {
+    "rule_id": "PY-EXCEPTION-002",
+    "rule": "Don't silence exceptions - log them or re-raise",
+    "severity": "error",
+    "category": "error_handling",
+    "suggested_fix": "Add logging.error() in except blocks or re-raise with 'raise' after handling"
+  },
+  {
+    "rule_id": "PY-F-STRING-001",
+    "rule": "Use f-strings for string formatting instead of % or .format()",
+    "severity": "info",
+    "category": "modern_python",
+    "suggested_fix": "Replace 'Hello %s' % name with f'Hello {name}'"
+  },
+  {
+    "rule_id": "PY-COMPREHENSION-001",
+    "rule": "Use list/dict comprehensions instead of loops for simple transformations",
+    "severity": "info",
+    "category": "pythonic",
+    "suggested_fix": "Replace for loops with [x*2 for x in items] or {k: v for k, v in pairs}"
+  },
+  {
+    "rule_id": "PY-WITH-001",
+    "rule": "Use context managers (with statement) for file and resource handling",
+    "severity": "error",
+    "category": "resource_management",
+    "suggested_fix": "Replace manual file.close() with 'with open(file) as f:' pattern"
+  },
+  {
+    "rule_id": "PY-NONE-001",
+    "rule": "Use 'is None' and 'is not None' instead of == None or != None",
+    "severity": "warning",
+    "category": "best_practice",
+    "suggested_fix": "Replace 'if x == None' with 'if x is None'"
+  },
+  {
+    "rule_id": "PY-BOOL-001",
+    "rule": "Don't compare boolean values using == True or == False",
+    "severity": "warning",
+    "category": "pythonic",
+    "suggested_fix": "Use 'if is_valid:' instead of 'if is_valid == True:'"
+  },
+  {
+    "rule_id": "PY-MUTABLE-001",
+    "rule": "Don't use mutable default arguments ([], {}) in function definitions",
+    "severity": "error",
+    "category": "correctness",
+    "suggested_fix": "Replace 'def func(items=[]):' with 'def func(items=None): items = items or []'"
+  },
+  {
+    "rule_id": "PY-MAIN-001",
+    "rule": "Use if __name__ == '__main__': guard for script entry points",
+    "severity": "warning",
+    "category": "best_practice",
+    "suggested_fix": "Wrap script execution code in 'if __name__ == '__main__':' block"
+  }
+]

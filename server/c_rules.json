@@ -1,0 +1,121 @@
+[
+  {
+    "rule_id": "C-DOC-001",
+    "rule": "All functions must have a header comment block describing purpose, parameters, and return value",
+    "severity": "error",
+    "category": "documentation",
+    "suggested_fix": "Add a comment block above each function with format: /* Function: name, Params: x, Return: y */"
+  },
+  {
+    "rule_id": "C-DOC-002",
+    "rule": "Complex code blocks must have explanatory comments",
+    "severity": "warning",
+    "category": "documentation",
+    "suggested_fix": "Add inline comments explaining non-obvious logic, algorithms, or business rules"
+  },
+  {
+    "rule_id": "C-CONST-001",
+    "rule": "Use const keyword for variables and pointers that don't change",
+    "severity": "warning",
+    "category": "best_practice",
+    "suggested_fix": "Add 'const' qualifier: const int VALUE = 100; or const char* ptr;"
+  },
+  {
+    "rule_id": "C-NAMING-001",
+    "rule": "Use snake_case for function and variable names",
+    "severity": "warning",
+    "category": "style",
+    "suggested_fix": "Convert names to lowercase with underscores: calculate_energy() not calculateEnergy()"
+  },
+  {
+    "rule_id": "C-NAMING-002",
+    "rule": "Use UPPER_CASE for macro constants and #define",
+    "severity": "warning",
+    "category": "style",
+    "suggested_fix": "Define constants as #define MAX_SIZE 100 not #define maxSize 100"
+  },
+  {
+    "rule_id": "C-SECURITY-001",
+    "rule": "No hardcoded passwords, API keys, or secrets in code",
+    "severity": "critical",
+    "category": "security",
+    "suggested_fix": "Move sensitive values to environment variables or secure configuration files"
+  },
+  {
+    "rule_id": "C-SECURITY-002",
+    "rule": "Always validate array bounds before access",
+    "severity": "critical",
+    "category": "security",
+    "suggested_fix": "Add bounds checking: if (i >= 0 && i < array_size) before arr[i]"
+  },
+  {
+    "rule_id": "C-MEMORY-001",
+    "rule": "Always check malloc/calloc/realloc return values for NULL",
+    "severity": "critical",
+    "category": "safety",
+    "suggested_fix": "After malloc, add: if (ptr == NULL) { handle error }"
+  },
+  {
+    "rule_id": "C-MEMORY-002",
+    "rule": "Free all dynamically allocated memory before function exit",
+    "severity": "error",
+    "category": "safety",
+    "suggested_fix": "Add free(ptr) calls for all malloc'd memory, especially on error paths"
+  },
+  {
+    "rule_id": "C-MEMORY-003",
+    "rule": "Set pointers to NULL after freeing them",
+    "severity": "warning",
+    "category": "safety",
+    "suggested_fix": "After free(ptr), add: ptr = NULL; to prevent use-after-free bugs"
+  },
+  {
+    "rule_id": "C-INDENT-001",
+    "rule": "Use consistent indentation (4 spaces recommended, no tabs)",
+    "severity": "warning",
+    "category": "style",
+    "suggested_fix": "Indent code blocks with 4 spaces consistently throughout the file"
+  },
+  {
+    "rule_id": "C-HEADER-001",
+    "rule": "Include all necessary standard library headers",
+    "severity": "error",
+    "category": "compilation",
+    "suggested_fix": "Add #include <stdio.h>, #include <stdlib.h>, #include <string.h> as needed"
+  },
+  {
+    "rule_id": "C-HEADER-002",
+    "rule": "Use header guards in .h files",
+    "severity": "error",
+    "category": "best_practice",
+    "suggested_fix": "Add #ifndef FILE_H, #define FILE_H at top and #endif at bottom of header files"
+  },
+  {
+    "rule_id": "C-MAIN-001",
+    "rule": "main() should return int and use standard signatures",
+    "severity": "error",
+    "category": "standard",
+    "suggested_fix": "Use 'int main(void)' or 'int main(int argc, char *argv[])' and return 0 on success"
+  },
+  {
+    "rule_id": "C-BUFFER-001",
+    "rule": "Use safe string functions (strncpy, snprintf) instead of unsafe ones (strcpy, sprintf)",
+    "severity": "critical",
+    "category": "security",
+    "suggested_fix": "Replace strcpy with strncpy and sprintf with snprintf to prevent buffer overflows"
+  },
+  {
+    "rule_id": "C-SWITCH-001",
+    "rule": "All switch statements must have a default case",
+    "severity": "warning",
+    "category": "safety",
+    "suggested_fix": "Add 'default:' case to handle unexpected values in switch statements"
+  },
+  {
+    "rule_id": "C-MAGIC-001",
+    "rule": "Avoid magic numbers - use named constants instead",
+    "severity": "warning",
+    "category": "readability",
+    "suggested_fix": "Replace literal numbers with #define MAX_USERS 100 or const int MAX_USERS = 100;"
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "rule_id": "ST-PREFIX-001",
+    "rule": "All boolean variables must start with 'b' prefix (bMotorRunning, bAlarmActive)",
+    "severity": "error",
+    "category": "naming",
+    "suggested_fix": "Rename boolean variables to start with 'b': bEnabled, bFault, bReady"
+  },
+  {
+    "rule_id": "ST-PREFIX-002",
+    "rule": "Integer variables must start with 'i' or 'n' prefix (iCounter, nSpeed)",
+    "severity": "error",
+    "category": "naming",
+    "suggested_fix": "Rename integer variables: iCount, nValue, iPosition"
+  },
+  {
+    "rule_id": "ST-PREFIX-003",
+    "rule": "Real/Float variables must start with 'r' or 'f' prefix (rTemperature, fVoltage)",
+    "severity": "error",
+    "category": "naming",
+    "suggested_fix": "Rename real variables: rPower, fCurrent, rSetpoint"
+  },
+  {
+    "rule_id": "ST-PREFIX-004",
+    "rule": "String variables must start with 's' prefix (sMessage, sDeviceName)",
+    "severity": "error",
+    "category": "naming",
+    "suggested_fix": "Rename string variables: sStatus, sError, sCommand"
+  },
+  {
+    "rule_id": "ST-COMMENT-001",
+    "rule": "Use (* ... *) style comments, not // comments",
+    "severity": "error",
+    "category": "style",
+    "suggested_fix": "Replace '//' comments with (* comment text *) format"
+  },
+  {
+    "rule_id": "ST-COMMENT-002",
+    "rule": "Add descriptive comments before each section (VAR, logic blocks, functions)",
+    "severity": "warning",
+    "category": "documentation",
+    "suggested_fix": "Add (* Description of what this section does *) before major code sections"
+  },
+  {
+    "rule_id": "ST-INDENT-001",
+    "rule": "Indent code inside IF, FOR, WHILE, CASE blocks by 3 spaces",
+    "severity": "warning",
+    "category": "style",
+    "suggested_fix": "Add 3-space indentation after IF, FOR, WHILE, CASE keywords"
+  },
+  {
+    "rule_id": "ST-KEYWORD-001",
+    "rule": "Use UPPERCASE for all ST keywords (IF, THEN, ELSE, END_IF, FOR, WHILE)",
+    "severity": "error",
+    "category": "style",
+    "suggested_fix": "Convert all keywords to uppercase: IF, THEN, END_IF, FOR, DO, END_FOR, WHILE, END_WHILE"
+  },
+  {
+    "rule_id": "ST-VAR-001",
+    "rule": "All variables must be declared in VAR, VAR_INPUT, VAR_OUTPUT, or VAR_IN_OUT sections",
+    "severity": "critical",
+    "category": "structure",
+    "suggested_fix": "Declare all variables in appropriate VAR sections with data types"
+  },
+  {
+    "rule_id": "ST-VAR-002",
+    "rule": "Add inline comments after variable declarations explaining their purpose",
+    "severity": "warning",
+    "category": "documentation",
+    "suggested_fix": "Add comments: bMotorRunning : BOOL; (* TRUE when motor is active *)"
+  },
+  {
+    "rule_id": "ST-CONSTANT-001",
+    "rule": "Define magic numbers as named constants in VAR_CONSTANT section",
+    "severity": "warning",
+    "category": "readability",
+    "suggested_fix": "Use VAR_CONSTANT section: MAX_SPEED : INT := 1000; instead of hardcoded 1000"
+  },
+  {
+    "rule_id": "ST-SECURITY-001",
+    "rule": "No hardcoded addresses, passwords, or device IDs in VAR sections",
+    "severity": "critical",
+    "category": "security",
+    "suggested_fix": "Move device addresses and passwords to configuration files or HMI parameters"
+  },
+  {
+    "rule_id": "ST-ASSIGN-001",
+    "rule": "Use := for assignments, not = (which is for comparison)",
+    "severity": "critical",
+    "category": "syntax",
+    "suggested_fix": "Replace '=' with ':=' for all variable assignments: bFlag := TRUE;"
+  },
+  {
+    "rule_id": "ST-LOGIC-001",
+    "rule": "Break complex boolean expressions into multiple lines for readability",
+    "severity": "warning",
+    "category": "readability",
+    "suggested_fix": "Split long conditions across lines with proper indentation"
+  },
+  {
+    "rule_id": "ST-STANDARD-001",
+    "rule": "Follow IEC 61131-3 standard for all ST programming",
+    "severity": "error",
+    "category": "compliance",
+    "suggested_fix": "Ensure code complies with IEC 61131-3 standard for industrial automation"
+  }
+]

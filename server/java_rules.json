@@ -1,0 +1,114 @@
+[
+  {
+    "rule_id": "JAVA-DOC-001",
+    "rule": "All public classes, methods, and interfaces must have Javadoc comments",
+    "severity": "error",
+    "category": "documentation",
+    "suggested_fix": "Add /** ... */ Javadoc with @param, @return, and @throws tags for all public APIs"
+  },
+  {
+    "rule_id": "JAVA-DOC-002",
+    "rule": "Javadoc comments must describe what the code does, not how it does it",
+    "severity": "warning",
+    "category": "documentation",
+    "suggested_fix": "Focus on high-level behavior and purpose in Javadoc, implementation details in inline comments"
+  },
+  {
+    "rule_id": "JAVA-NAMING-001",
+    "rule": "Use PascalCase for class names, camelCase for methods and variables, UPPER_CASE for constants",
+    "severity": "warning",
+    "category": "style",
+    "suggested_fix": "Classes: EnergyMonitor, methods: calculatePower(), variables: motorSpeed, constants: MAX_VOLTAGE"
+  },
+  {
+    "rule_id": "JAVA-NAMING-002",
+    "rule": "Package names must be all lowercase",
+    "severity": "warning",
+    "category": "style",
+    "suggested_fix": "Use 'com.schneider.energy' not 'com.Schneider.Energy'"
+  },
+  {
+    "rule_id": "JAVA-ACCESS-001",
+    "rule": "Always specify access modifiers explicitly (public, private, protected, or package-private)",
+    "severity": "warning",
+    "category": "best_practice",
+    "suggested_fix": "Add explicit access modifiers to all class members - don't rely on default package-private"
+  },
+  {
+    "rule_id": "JAVA-ACCESS-002",
+    "rule": "Make fields private and provide public getters/setters as needed",
+    "severity": "warning",
+    "category": "encapsulation",
+    "suggested_fix": "Change 'public int voltage' to 'private int voltage' with public getVoltage() method"
+  },
+  {
+    "rule_id": "JAVA-GENERICS-001",
+    "rule": "Use generics instead of raw types for type safety",
+    "severity": "error",
+    "category": "type_safety",
+    "suggested_fix": "Replace 'List list' with 'List<String> list' or appropriate type parameter"
+  },
+  {
+    "rule_id": "JAVA-GENERICS-002",
+    "rule": "Prefer generic methods over raw method signatures",
+    "severity": "warning",
+    "category": "type_safety",
+    "suggested_fix": "Use <T> T getValue() instead of Object getValue() for better type safety"
+  },
+  {
+    "rule_id": "JAVA-SECURITY-001",
+    "rule": "No hardcoded passwords, API keys, or credentials",
+    "severity": "critical",
+    "category": "security",
+    "suggested_fix": "Use environment variables, configuration files, or secure key stores"
+  },
+  {
+    "rule_id": "JAVA-EXCEPTION-001",
+    "rule": "Never catch generic Exception - catch specific exceptions",
+    "severity": "warning",
+    "category": "error_handling",
+    "suggested_fix": "Replace 'catch (Exception e)' with specific exceptions like 'catch (IOException e)'"
+  },
+  {
+    "rule_id": "JAVA-EXCEPTION-002",
+    "rule": "Don't swallow exceptions - log or rethrow them",
+    "severity": "error",
+    "category": "error_handling",
+    "suggested_fix": "In catch blocks, use logger.error() or throw new RuntimeException(e) instead of empty catch"
+  },
+  {
+    "rule_id": "JAVA-RESOURCE-001",
+    "rule": "Use try-with-resources for auto-closeable resources",
+    "severity": "error",
+    "category": "resource_management",
+    "suggested_fix": "Use 'try (FileReader fr = new FileReader(file))' instead of manual close() calls"
+  },
+  {
+    "rule_id": "JAVA-FINAL-001",
+    "rule": "Mark variables final when they are not reassigned",
+    "severity": "info",
+    "category": "best_practice",
+    "suggested_fix": "Add 'final' keyword to method parameters and local variables that don't change"
+  },
+  {
+    "rule_id": "JAVA-EQUALS-001",
+    "rule": "Override equals() and hashCode() together",
+    "severity": "error",
+    "category": "correctness",
+    "suggested_fix": "When overriding equals(), also override hashCode() to maintain hash-based collection contracts"
+  },
+  {
+    "rule_id": "JAVA-STRING-001",
+    "rule": "Use StringBuilder for string concatenation in loops",
+    "severity": "warning",
+    "category": "performance",
+    "suggested_fix": "Replace 'str += x' in loops with StringBuilder.append() to avoid creating many String objects"
+  },
+  {
+    "rule_id": "JAVA-STREAM-001",
+    "rule": "Consider using Stream API for collection operations",
+    "severity": "info",
+    "category": "modern_java",
+    "suggested_fix": "Replace traditional loops with stream operations like list.stream().filter().map().collect()"
+  }
+]

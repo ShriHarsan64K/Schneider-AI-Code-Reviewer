@@ -1,0 +1,2184 @@
+{
+  "rules": [
+    {
+      "rule": "No spaces or special characters allowed in identifiers.",
+      "suggested_fix": "Use only alphanumeric characters and underscores.",
+      "rule_id": "R001"
+    },
+    {
+      "rule": "Identifiers are case-insensitive.",
+      "suggested_fix": "Avoid using similar names with different cases.",
+      "rule_id": "R002"
+    },
+    {
+      "rule": "Do not use more than 1 underscore character in a row.",
+      "suggested_fix": "Limit underscores to a single character between words.",
+      "rule_id": "R003"
+    },
+    {
+      "rule": "Do not create an identifier that is identical to a keyword.",
+      "suggested_fix": "Choose a different name for the identifier.",
+      "rule_id": "R004"
+    },
+    {
+      "rule": "Duplicate use of identifiers is not allowed locally.",
+      "suggested_fix": "Ensure local identifiers are unique.",
+      "rule_id": "R005"
+    },
+    {
+      "rule": "Multiple use of an identifier is allowed globally.",
+      "suggested_fix": "Use local variables with the same name as global ones with caution.",
+      "rule_id": "R006"
+    },
+    {
+      "rule": "Variables defined in a global variable list (GVL) can have the same name as variables in another GVL.",
+      "suggested_fix": "Access them specifically by preceding the variable name with the list name.",
+      "rule_id": "R007"
+    },
+    {
+      "rule": "Variables declared in GVLs or POUs of the Global node can be accessed by prefixing them with the operator '__POOL.'.",
+      "suggested_fix": "Use the correct prefix to access these variables.",
+      "rule_id": "R008"
+    },
+    {
+      "rule": "You can link the variable directly to a definite address using the keyword AT.",
+      "suggested_fix": "Specify the address correctly in the declaration.",
+      "rule_id": "R009"
+    },
+    {
+      "rule": "You can add pragma instructions in the declaration part of an object.",
+      "suggested_fix": "Use pragma instructions to affect code generation as needed.",
+      "rule_id": "R010"
+    },
+    {
+      "rule": "Automatic declaration of variables is possible.",
+      "suggested_fix": "Utilize automatic declaration features for efficiency.",
+      "rule_id": "R011"
+    },
+    {
+      "rule": "Use shortcut mode for faster input of declarations.",
+      "suggested_fix": "Enable shortcut mode in the editor.",
+      "rule_id": "R012"
+    },
+    {
+      "rule": "Use Hungarian notation for naming variables.",
+      "suggested_fix": "Follow Hungarian notation for variable names.",
+      "rule_id": "R013"
+    },
+    {
+      "rule": "Use a capital letter for each word of the base name in variable names.",
+      "suggested_fix": "Capitalize the first letter of each word in the base name.",
+      "rule_id": "R014"
+    },
+    {
+      "rule": "Use small letters for the rest of the variable name.",
+      "suggested_fix": "Use lowercase letters for the remaining parts of the variable name.",
+      "rule_id": "R015"
+    },
+    {
+      "rule": "Prefix local constants with 'c_' followed by an underscore and the type prefix.",
+      "suggested_fix": "Format local constants as c_<type_prefix>_<variable_name>.",
+      "rule_id": "R016"
+    },
+    {
+      "rule": "Prefix global variables with 'g_' and global constants with 'gc_'.",
+      "suggested_fix": "Format global variables as g_<variable_name> and global constants as gc_<constant_name>.",
+      "rule_id": "R017"
+    },
+    {
+      "rule": "Use the library namespace as a prefix when accessing variables in application code.",
+      "suggested_fix": "Access variables using the format <namespace>.<variable_name>.",
+      "rule_id": "R018"
+    },
+    {
+      "rule": "Name user-defined data types (DUTs) with a short expressive description.",
+      "suggested_fix": "Format DUT names as <short_description>.",
+      "rule_id": "R019"
+    },
+    {
+      "rule": "Prefix functions, function blocks, and programs with an expressive short name.",
+      "suggested_fix": "Use a short descriptive name for the POU, capitalizing the first letter of each word.",
+      "rule_id": "R020"
+    },
+    {
+      "rule": "Actions that are called only internally should start with 'prv_'.",
+      "suggested_fix": "Prefix internal actions with prv_.",
+      "rule_id": "R021"
+    },
+    {
+      "rule": "Start interface names with the letter 'I'.",
+      "suggested_fix": "Format interface names as I<InterfaceName>.",
+      "rule_id": "R022"
+    },
+    {
+      "rule": "Provide a short description of the POU as a comment in the declaration part.",
+      "suggested_fix": "Add a comment describing the POU in its declaration.",
+      "rule_id": "R023"
+    },
+    {
+      "rule": "Inputs and outputs of a POU should be provided with comments.",
+      "suggested_fix": "Comment on the inputs and outputs of the POU.",
+      "rule_id": "R024"
+    },
+    {
+      "rule": "Actions do not get a prefix.",
+      "suggested_fix": "Ensure actions are named without a prefix.",
+      "rule_id": "R025"
+    },
+    {
+      "rule": "Only those actions that are to be called only internally start with prv_.",
+      "suggested_fix": "Prefix internal actions with prv_.",
+      "rule_id": "R026"
+    },
+    {
+      "rule": "Start interface names with letter I.",
+      "suggested_fix": "Prefix interface names with 'I', e.g., ICANDevice.",
+      "rule_id": "R027"
+    },
+    {
+      "rule": "The default initialization value is 0 for all declarations.",
+      "suggested_fix": "Use 0 as the default initialization value unless specified otherwise.",
+      "rule_id": "R028"
+    },
+    {
+      "rule": "User-defined initialization values are assigned using the operator :=.",
+      "suggested_fix": "Use := to assign user-defined initialization values.",
+      "rule_id": "R029"
+    },
+    {
+      "rule": "Verify that a variable used for the initialization of another variable is already initialized.",
+      "suggested_fix": "Ensure all variables used in initialization are defined beforehand.",
+      "rule_id": "R030"
+    },
+    {
+      "rule": "Variables of global variable lists (GVL) are initialized before local variables of a POU.",
+      "suggested_fix": "Be aware of the initialization order between GVL and local variables.",
+      "rule_id": "R031"
+    },
+    {
+      "rule": "Variables in a function block are initialized in the order of their declarations.",
+      "suggested_fix": "Follow the declaration order for variable initialization in function blocks.",
+      "rule_id": "R032"
+    },
+    {
+      "rule": "You can declare variables manually or automatically.",
+      "suggested_fix": "Use either manual or automatic declaration methods as needed.",
+      "rule_id": "R033"
+    },
+    {
+      "rule": "The Auto Declare dialog box can be opened automatically or manually.",
+      "suggested_fix": "Use the Auto Declare feature for variable declarations.",
+      "rule_id": "R034"
+    },
+    {
+      "rule": "Activate shortcut mode by pressing CTRL+ENTER.",
+      "suggested_fix": "Use CTRL+ENTER to enable shortcut mode in the declaration editor.",
+      "rule_id": "R035"
+    },
+    {
+      "rule": "All identifiers up to the last identifier of a line will become declaration variable identifiers.",
+      "suggested_fix": "Ensure the last identifier is correctly defined for variable declaration.",
+      "rule_id": "R036"
+    },
+    {
+      "rule": "If no type has been established, automatically BOOL is the type.",
+      "suggested_fix": "Assume BOOL type if no type is specified.",
+      "rule_id": "R037"
+    },
+    {
+      "rule": "A text after a semicolon becomes a comment.",
+      "suggested_fix": "Use semicolons to denote comments in declarations.",
+      "rule_id": "R038"
+    },
+    {
+      "rule": "In AT declarations, a valid address must follow the keyword AT.",
+      "suggested_fix": "Ensure a valid address is provided after the AT keyword.",
+      "rule_id": "R039"
+    },
+    {
+      "rule": "Variables requiring an input cannot be accessed by writing.",
+      "suggested_fix": "Do not attempt to write to input variables.",
+      "rule_id": "R040"
+    },
+    {
+      "rule": "Any changes concerning an incoming or outgoing signal may only be done in a single place.",
+      "suggested_fix": "Make changes in the declaration only.",
+      "rule_id": "R041"
+    },
+    {
+      "rule": "AT declarations can only be used with local or global variables.",
+      "suggested_fix": "Do not use AT declarations with input and output variables of POUs.",
+      "rule_id": "R042"
+    },
+    {
+      "rule": "AT declarations are not allowed in persistent variable lists.",
+      "suggested_fix": "Avoid using AT declarations in persistent variable lists.",
+      "rule_id": "R043"
+    },
+    {
+      "rule": "If AT declarations are used with structure or function block members, all instances will access the same memory location.",
+      "suggested_fix": "Be aware that this corresponds to static variables in classic programming languages.",
+      "rule_id": "R044"
+    },
+    {
+      "rule": "The memory layout of structures is determined by the target.",
+      "suggested_fix": "Check the target device for memory layout.",
+      "rule_id": "R045"
+    },
+    {
+      "rule": "Write keywords in uppercase letters in the editors.",
+      "suggested_fix": "Use uppercase for all keywords.",
+      "rule_id": "R046"
+    },
+    {
+      "rule": "Reserved strings cannot be used as identifiers for variables or POUs.",
+      "suggested_fix": "Avoid using reserved strings as identifiers.",
+      "rule_id": "R047"
+    },
+    {
+      "rule": "Local variables declared between VAR and END_VAR cannot be written from the outside.",
+      "suggested_fix": "Ensure local variables are not accessed externally.",
+      "rule_id": "R048"
+    },
+    {
+      "rule": "Input variables declared between VAR_INPUT and END_VAR can be provided values at the call position.",
+      "suggested_fix": "Use VAR_INPUT for input variables.",
+      "rule_id": "R049"
+    },
+    {
+      "rule": "Output variables declared between VAR_OUTPUT and END_VAR carry values back to the calling POU.",
+      "suggested_fix": "Use VAR_OUTPUT for output variables.",
+      "rule_id": "R050"
+    },
+    {
+      "rule": "Functions can have additional outputs as per IEC 61131-3 draft 2.",
+      "suggested_fix": "Assign additional outputs in function calls.",
+      "rule_id": "R051"
+    },
+    {
+      "rule": "Input and output variables declared between VAR_IN_OUT and END_VAR cannot be constants.",
+      "suggested_fix": "Do not use constants for VAR_IN_OUT variables.",
+      "rule_id": "R052"
+    },
+    {
+      "rule": "The value of IN_OUT type variables cannot be a constant.",
+      "suggested_fix": "Use a non-constant value for IN_OUT type variables.",
+      "rule_id": "R053"
+    },
+    {
+      "rule": "Do not assign bit-type symbols to BOOL-type VAR_IN_OUT parameters.",
+      "suggested_fix": "Ensure assignments to BOOL-type VAR_IN_OUT parameters are not from bit-type symbols.",
+      "rule_id": "R054"
+    },
+    {
+      "rule": "Global variables can only be declared in global variable lists (GVLs).",
+      "suggested_fix": "Declare global variables within a GVL.",
+      "rule_id": "R055"
+    },
+    {
+      "rule": "A variable defined locally in a POU with the same name as a global variable will have priority within the POU.",
+      "suggested_fix": "Avoid naming conflicts between local and global variables.",
+      "rule_id": "R056"
+    },
+    {
+      "rule": "Global variables are initialized before local variables of POUs.",
+      "suggested_fix": "Be aware of the initialization order when using global and local variables.",
+      "rule_id": "R057"
+    },
+    {
+      "rule": "Temporary variables get (re)initialized at each call of the POU.",
+      "suggested_fix": "Use VAR_TEMP for variables that need to be reinitialized with each POU call.",
+      "rule_id": "R058"
+    },
+    {
+      "rule": "VAR_TEMP declarations are only possible within programs and function blocks.",
+      "suggested_fix": "Declare VAR_TEMP only in the appropriate scopes.",
+      "rule_id": "R059"
+    },
+    {
+      "rule": "Static variables do not lose their value after the POU is left.",
+      "suggested_fix": "Use VAR_STAT for variables that need to retain their value across POU calls.",
+      "rule_id": "R060"
+    },
+    {
+      "rule": "Static variables are shared between the POUs they are declared in.",
+      "suggested_fix": "Be cautious when using static variables across multiple POUs.",
+      "rule_id": "R061"
+    },
+    {
+      "rule": "External variables must have identical declarations in the POU and the global variable list.",
+      "suggested_fix": "Ensure consistency in declarations for external variables.",
+      "rule_id": "R062"
+    },
+    {
+      "rule": "VAR_INST variables are only allowed in methods.",
+      "suggested_fix": "Declare VAR_INST variables exclusively within methods.",
+      "rule_id": "R063"
+    },
+    {
+      "rule": "Attributes such as CONST, RETAIN are not allowed in the declaration of VAR_INST variables.",
+      "suggested_fix": "Avoid using restricted attributes in VAR_INST declarations.",
+      "rule_id": "R064"
+    },
+    {
+      "rule": "Remanent variables can retain their value throughout the program run period.",
+      "suggested_fix": "Declare variables as RETAIN or PERSISTENT to maintain their values.",
+      "rule_id": "R065"
+    },
+    {
+      "rule": "A VAR PERSISTENT declaration is interpreted the same as VAR PERSISTENT RETAIN.",
+      "suggested_fix": "Use VAR PERSISTENT for persistent variable declarations.",
+      "rule_id": "R066"
+    },
+    {
+      "rule": "A VAR PERSISTENT declaration is interpreted the same as VAR PERSISTENT RETAIN or VAR RETAIN PERSISTENT.",
+      "suggested_fix": "Use VAR PERSISTENT, VAR PERSISTENT RETAIN, or VAR RETAIN PERSISTENT interchangeably.",
+      "rule_id": "R067"
+    },
+    {
+      "rule": "Use the command Add all instance paths to take variables declared as persistent into the Persistent list object.",
+      "suggested_fix": "Ensure to add instance paths for persistent variables.",
+      "rule_id": "R068"
+    },
+    {
+      "rule": "Variables declared as retain variables are stored in a nonvolatile memory area.",
+      "suggested_fix": "Use the keyword RETAIN in the declaration part of a POU or in a global variable list.",
+      "rule_id": "R069"
+    },
+    {
+      "rule": "Retain variables maintain their value after an unanticipated shutdown or normal power cycle.",
+      "suggested_fix": "Use retain variables for operations that need to continue after power outages.",
+      "rule_id": "R070"
+    },
+    {
+      "rule": "Retain variables are reinitialized when executing the Online command Reset origin.",
+      "suggested_fix": "Be aware that retain variables will reset under certain online commands.",
+      "rule_id": "R071"
+    },
+    {
+      "rule": "Only specific variables defined as VAR RETAIN are stored in nonvolatile memory.",
+      "suggested_fix": "Define VAR RETAIN only for necessary variables.",
+      "rule_id": "R072"
+    },
+    {
+      "rule": "Local variables defined as VAR RETAIN in functions are NOT stored in nonvolatile memory.",
+      "suggested_fix": "Avoid defining VAR RETAIN locally in functions.",
+      "rule_id": "R073"
+    },
+    {
+      "rule": "Using interfaces or function blocks out of System Configuration libraries in the retain program section will cause system exceptions.",
+      "suggested_fix": "Do not use interfaces or function blocks from SystemConfigurationItf or SystemConfiguration libraries in VAR_RETAIN.",
+      "rule_id": "R074"
+    },
+    {
+      "rule": "Persistent variables are identified by the keyword PERSISTENT (VAR_GLOBAL PERSISTENT).",
+      "suggested_fix": "Use VAR_GLOBAL PERSISTENT for persistent variable declarations.",
+      "rule_id": "R075"
+    },
+    {
+      "rule": "Persistent variables are only reinitialized when executing the Online command Reset origin.",
+      "suggested_fix": "Understand the reinitialization behavior of persistent variables.",
+      "rule_id": "R076"
+    },
+    {
+      "rule": "Do not use the AT declaration in combination with VAR PERSISTENT.",
+      "suggested_fix": "Avoid using AT with VAR PERSISTENT.",
+      "rule_id": "R077"
+    },
+    {
+      "rule": "You can only declare persistent variables in a special global variable list of object type persistent variables.",
+      "suggested_fix": "Ensure persistent variables are declared in the correct global variable list.",
+      "rule_id": "R078"
+    },
+    {
+      "rule": "A declaration with VAR_GLOBAL PERSISTENT has the same effect as VAR_GLOBAL PERSISTENT RETAIN or VAR_GLOBAL RETAIN PERSISTENT.",
+      "suggested_fix": "Use any of these declarations interchangeably.",
+      "rule_id": "R079"
+    },
+    {
+      "rule": "Persistent variables can only be declared inside the Persistent list object.",
+      "suggested_fix": "Declare persistent variables only within the Persistent list object.",
+      "rule_id": "R080"
+    },
+    {
+      "rule": "At each reload of the application, the persistent variable list on the controller will be checked against that of the project.",
+      "suggested_fix": "Be prepared for reinitialization prompts due to inconsistencies.",
+      "rule_id": "R081"
+    },
+    {
+      "rule": "Carefully consider modifications in the declaration part of the persistent variable list.",
+      "suggested_fix": "Add new declarations only at the end of the list.",
+      "rule_id": "R082"
+    },
+    {
+      "rule": "If you modify the name or data type of a variable, it is handled as a new declaration.",
+      "suggested_fix": "Avoid modifying names or data types to prevent reinitialization.",
+      "rule_id": "R083"
+    },
+    {
+      "rule": "Constants are identified by the keyword CONSTANT.",
+      "suggested_fix": "Use the keyword CONSTANT for declaring constants.",
+      "rule_id": "R084"
+    },
+    {
+      "rule": "You can declare constants locally or globally.",
+      "suggested_fix": "Decide on the scope of constants based on usage.",
+      "rule_id": "R085"
+    },
+    {
+      "rule": "Use typed literals to achieve different data types without explicitly declaring constants.",
+      "suggested_fix": "Prefix constants with the appropriate type for typed literals.",
+      "rule_id": "R086"
+    },
+    {
+      "rule": "Use typed literals with a prefix to specify the data type.",
+      "suggested_fix": "Ensure the constant is prefixed correctly with the desired data type.",
+      "rule_id": "R087"
+    },
+    {
+      "rule": "Write the type in uppercase letters.",
+      "suggested_fix": "Convert the type to uppercase.",
+      "rule_id": "R088"
+    },
+    {
+      "rule": "Enter data that fits within the specified data type.",
+      "suggested_fix": "Check and adjust the data to fit the defined type.",
+      "rule_id": "R089"
+    },
+    {
+      "rule": "Constants in online mode cannot be accessed if the Replace constants setting is activated.",
+      "suggested_fix": "Disable the Replace constants setting to access constants in online mode.",
+      "rule_id": "R090"
+    },
+    {
+      "rule": "Use an asterisk to identify incomplete addresses in variable declarations.",
+      "suggested_fix": "Add an asterisk to the address in the declaration.",
+      "rule_id": "R091"
+    },
+    {
+      "rule": "Specify instance variables by the complete instance path separated by periods.",
+      "suggested_fix": "Ensure the instance path is complete and correctly formatted.",
+      "rule_id": "R092"
+    },
+    {
+      "rule": "Verify that the data type agrees with the declaration in the function block.",
+      "suggested_fix": "Check and correct the data type in the variable configuration.",
+      "rule_id": "R093"
+    },
+    {
+      "rule": "Configuration variables with an invalid instance path are detected as errors.",
+      "suggested_fix": "Correct the instance path to a valid one.",
+      "rule_id": "R094"
+    },
+    {
+      "rule": "Changes on directly mapped I/Os are shown immediately in the process image.",
+      "suggested_fix": "Be aware that changes on VAR_CONFIG mapped variables are not shown until the task ends.",
+      "rule_id": "R095"
+    },
+    {
+      "rule": "The keywords VAR_GLOBAL and VAR_CONFIG can only be used exclusively in a global variable list.",
+      "suggested_fix": "Use either VAR_GLOBAL or VAR_CONFIG, but not both.",
+      "rule_id": "R096"
+    },
+    {
+      "rule": "FB_Init method is used to initialize function block variables.",
+      "suggested_fix": "Explicitly declare FB_Init if custom initialization is needed.",
+      "rule_id": "R097"
+    },
+    {
+      "rule": "FB_Reinit method must be declared explicitly and is called after copying the function block instance.",
+      "suggested_fix": "Declare FB_Reinit to ensure proper reinitialization.",
+      "rule_id": "R098"
+    },
+    {
+      "rule": "FB_Exit method must be declared explicitly and is called before the function block instance code is removed.",
+      "suggested_fix": "Declare FB_Exit if cleanup actions are needed before removal.",
+      "rule_id": "R099"
+    },
+    {
+      "rule": "FB_Reinit must be called explicitly to reinitialize the base function block.",
+      "suggested_fix": "Call FB_Reinit for the function block.",
+      "rule_id": "R100"
+    },
+    {
+      "rule": "FB_Exit must be declared explicitly.",
+      "suggested_fix": "Declare the FB_Exit method explicitly.",
+      "rule_id": "R101"
+    },
+    {
+      "rule": "The return value of FB_Exit is not evaluated.",
+      "suggested_fix": "Do not expect a return value from FB_Exit.",
+      "rule_id": "R102"
+    },
+    {
+      "rule": "FB_Init should be implemented to influence the first download process.",
+      "suggested_fix": "Implement FB_Init in the program code.",
+      "rule_id": "R103"
+    },
+    {
+      "rule": "During an Online Change, FB_Exit, FB_Init, and FB_Reinit can influence function block initialization.",
+      "suggested_fix": "Use these methods appropriately during Online Change.",
+      "rule_id": "R104"
+    },
+    {
+      "rule": "If changes are made in the declaration part of a function block, FB_Reinit is performed during Online Change.",
+      "suggested_fix": "Ensure FB_Reinit is called if declaration changes occur.",
+      "rule_id": "R105"
+    },
+    {
+      "rule": "Verify the validity of pointers when using them during Online Change.",
+      "suggested_fix": "Check pointer validity before executing Online Change.",
+      "rule_id": "R106"
+    },
+    {
+      "rule": "FB_Exit should be called to initiate cleanup before the copy process.",
+      "suggested_fix": "Call FB_Exit before starting the copy process.",
+      "rule_id": "R107"
+    },
+    {
+      "rule": "FB_Init can be used to initialize variables at new memory locations during Online Change.",
+      "suggested_fix": "Use FB_Init to initialize variables appropriately.",
+      "rule_id": "R108"
+    },
+    {
+      "rule": "The copy operation should maintain existing values.",
+      "suggested_fix": "Ensure values are copied from old instance to new instance.",
+      "rule_id": "R109"
+    },
+    {
+      "rule": "FB_Reinit should be called after the copy operation to set variables to defined values.",
+      "suggested_fix": "Call FB_Reinit after the copy operation.",
+      "rule_id": "R110"
+    },
+    {
+      "rule": "Implement FB_Reinit independently of Online Change.",
+      "suggested_fix": "Ensure FB_Reinit can be called anytime.",
+      "rule_id": "R111"
+    },
+    {
+      "rule": "Variables with {attribute no_copy} will not be copied during Online Change.",
+      "suggested_fix": "Use {attribute no_copy} for variables that should not be copied.",
+      "rule_id": "R112"
+    },
+    {
+      "rule": "FB_Exit can be used to assign a defined state to external resources during application download.",
+      "suggested_fix": "Use FB_Exit to manage external resources on download.",
+      "rule_id": "R113"
+    },
+    {
+      "rule": "Initial assignments are processed after FB_Init is called before the first cycle.",
+      "suggested_fix": "Ensure assignments are executed after FB_Init.",
+      "rule_id": "R114"
+    },
+    {
+      "rule": "Attach {attribute call_after_init} to verify impacts of assignments.",
+      "suggested_fix": "Use {attribute call_after_init} above function block declarations.",
+      "rule_id": "R115"
+    },
+    {
+      "rule": "Attach the {attribute call_after_init} pragma to a function block and a method of a function block.",
+      "suggested_fix": "Insert this attribute above the declaration part of the function block and method.",
+      "rule_id": "R116"
+    },
+    {
+      "rule": "Assign the same name, the same signature, and the same attribute to the corresponding method.",
+      "suggested_fix": "Call SUPER^.MyInit.",
+      "rule_id": "R117"
+    },
+    {
+      "rule": "Do not call SUPER^.FB_Init when the explicitly defined initialization code is executed.",
+      "suggested_fix": "Ensure that the function block has been initialized completely via the implicit initialization code.",
+      "rule_id": "R118"
+    },
+    {
+      "rule": "The parameter bInCopyCode is mandatory in the FB_Exit method.",
+      "suggested_fix": "Declare bInCopyCode as a VAR_INPUT in the FB_Exit method.",
+      "rule_id": "R119"
+    },
+    {
+      "rule": "The FB_Init method of a derived function block must define the same parameters as the FB_Init method of the base function block.",
+      "suggested_fix": "Add further parameters in the derived FB_Init method for special initialization.",
+      "rule_id": "R120"
+    },
+    {
+      "rule": "Pragmas must not be used within an expression and not in the declaration part of editors.",
+      "suggested_fix": "Use pragmas only at statement positions.",
+      "rule_id": "R121"
+    },
+    {
+      "rule": "Opening and closing brackets of a pragma must be in the same line.",
+      "suggested_fix": "Ensure that the syntax { <instruction text> } is followed correctly.",
+      "rule_id": "R122"
+    },
+    {
+      "rule": "Do not use conditional pragmas at incorrect positions.",
+      "suggested_fix": "Follow the correct positions for conditional pragmas as indicated in the guidelines.",
+      "rule_id": "R123"
+    },
+    {
+      "rule": "Do not use conditional pragmas at positions indicated in this negative example.",
+      "suggested_fix": "Place conditional pragmas in valid positions.",
+      "rule_id": "R124"
+    },
+    {
+      "rule": "Pragma instructions are case-sensitive.",
+      "suggested_fix": "Ensure correct casing for pragma instructions.",
+      "rule_id": "R125"
+    },
+    {
+      "rule": "Message pragmas positioned within currently not defined sections of the implementation code will not be considered when the project is compiled.",
+      "suggested_fix": "Place message pragmas in defined sections of the implementation code.",
+      "rule_id": "R126"
+    },
+    {
+      "rule": "Do not use any conditional pragmas in the declaration part.",
+      "suggested_fix": "Use conditional pragmas only in the implementation part.",
+      "rule_id": "R127"
+    },
+    {
+      "rule": "The specified expressions in conditional pragmas must be constant at compile time.",
+      "suggested_fix": "Ensure expressions are constant at compile time.",
+      "rule_id": "R128"
+    },
+    {
+      "rule": "The order of sections in conditional pragmas is determinate; elsif and else sections are optional.",
+      "suggested_fix": "Follow the correct order for conditional pragma sections.",
+      "rule_id": "R129"
+    },
+    {
+      "rule": "Conditional compilation operators may not be undefined or redefined via {undefine} or {define}.",
+      "suggested_fix": "Avoid redefining conditional compilation operators.",
+      "rule_id": "R130"
+    },
+    {
+      "rule": "If the compiler cannot meaningfully interpret the instruction text, the entire pragma is handled as a comment and is skipped.",
+      "suggested_fix": "Ensure pragma instructions are clear and interpretable.",
+      "rule_id": "R131"
+    },
+    {
+      "rule": "Use {define} to define identifiers in the Compiler.",
+      "suggested_fix": "Ensure identifiers are defined using the {define} instruction.",
+      "rule_id": "R132"
+    },
+    {
+      "rule": "Use defined(identifier) to check if an identifier is defined.",
+      "suggested_fix": "Wrap code in {IF defined(identifier)} to conditionally execute based on identifier definition.",
+      "rule_id": "R133"
+    },
+    {
+      "rule": "Use defined(variable:variable) to check if a variable is declared in the current scope.",
+      "suggested_fix": "Wrap code in {IF defined(variable:variable)} to conditionally execute based on variable declaration.",
+      "rule_id": "R134"
+    },
+    {
+      "rule": "Use defined(type:identifier) to check if a type is declared.",
+      "suggested_fix": "Wrap code in {IF defined(type:identifier)} to conditionally execute based on type declaration.",
+      "rule_id": "R135"
+    },
+    {
+      "rule": "Use defined(pou:pou-name) to check if a POU is defined.",
+      "suggested_fix": "Wrap code in {IF defined(pou:pou-name)} to conditionally execute based on POU definition.",
+      "rule_id": "R136"
+    },
+    {
+      "rule": "Use hasattribute(pou:pou-name, attribute) to check if a POU has a specific attribute.",
+      "suggested_fix": "Wrap code in {IF hasattribute(pou:pou-name, attribute)} to conditionally execute based on POU attribute.",
+      "rule_id": "R137"
+    },
+    {
+      "rule": "Use hasattribute(variable:variable, attribute) to check if a variable has a specific attribute.",
+      "suggested_fix": "Wrap code in {IF hasattribute(variable:variable, attribute)} to conditionally execute based on variable attribute.",
+      "rule_id": "R138"
+    },
+    {
+      "rule": "Use hastype(variable:variable, type-spec) to check if a variable has a specific type.",
+      "suggested_fix": "Wrap code in {IF hastype(variable:variable, type-spec)} to conditionally execute based on variable type.",
+      "rule_id": "R139"
+    },
+    {
+      "rule": "Use hastype to check variable types before processing.",
+      "suggested_fix": "Ensure variable types are correctly defined in each application.",
+      "rule_id": "R140"
+    },
+    {
+      "rule": "Use hasvalue to check if a define is set to a specific value.",
+      "suggested_fix": "Verify that the define is correctly assigned in each application.",
+      "rule_id": "R141"
+    },
+    {
+      "rule": "Use NOT operator to invert boolean expressions.",
+      "suggested_fix": "Ensure the correct operator is used for logical negation.",
+      "rule_id": "R142"
+    },
+    {
+      "rule": "Use AND operator to combine multiple conditions that must all be true.",
+      "suggested_fix": "Check that all conditions are correctly defined and evaluated.",
+      "rule_id": "R143"
+    },
+    {
+      "rule": "Use OR operator to combine conditions where at least one must be true.",
+      "suggested_fix": "Ensure that at least one condition is true for the expression to evaluate as true.",
+      "rule_id": "R144"
+    },
+    {
+      "rule": "Use region pragmas to group lines of code into blocks.",
+      "suggested_fix": "Assign meaningful names to region pragmas for better organization.",
+      "rule_id": "R145"
+    },
+    {
+      "rule": "Assign attribute pragmas to influence code generation.",
+      "suggested_fix": "Define attributes in the declaration part of the code.",
+      "rule_id": "R146"
+    },
+    {
+      "rule": "User-defined attributes can be assigned to POUs, type declarations, or variables.",
+      "suggested_fix": "Ensure that user-defined attributes are correctly assigned.",
+      "rule_id": "R147"
+    },
+    {
+      "rule": "The syntax for user-defined attributes is {attribute 'attribute'}.",
+      "suggested_fix": "Follow the correct syntax for defining attributes.",
+      "rule_id": "R148"
+    },
+    {
+      "rule": "Functions and programs with the attribute call_after_global_init_slot are called after global initialization.",
+      "suggested_fix": "Use this attribute to control the calling sequence after global initialization.",
+      "rule_id": "R149"
+    },
+    {
+      "rule": "Compile errors occur if VAR_INPUT declarations are used in functions with call_after_global_init_slot.",
+      "suggested_fix": "Avoid using VAR_INPUT in functions with this attribute.",
+      "rule_id": "R150"
+    },
+    {
+      "rule": "The syntax for call_after_global_init_slot is {attribute 'call_after_global_init_slot' := '<slot>'}.",
+      "suggested_fix": "Specify an integer value for <slot> to define the calling sequence priority.",
+      "rule_id": "R151"
+    },
+    {
+      "rule": "The attribute call_after_init defines a method called after the initialization of a function block instance.",
+      "suggested_fix": "Attach this attribute to both the function block and the instance method.",
+      "rule_id": "R152"
+    },
+    {
+      "rule": "Compile errors occur if VAR_INPUT declarations are used in methods with call_after_init.",
+      "suggested_fix": "Avoid using VAR_INPUT in methods with this attribute.",
+      "rule_id": "R153"
+    },
+    {
+      "rule": "The syntax for call_after_init is {attribute 'call_after_init'}.",
+      "suggested_fix": "Use the correct syntax to define the attribute.",
+      "rule_id": "R154"
+    },
+    {
+      "rule": "Functions and programs with the attribute call_after_online_change_slot are called after an online change.",
+      "suggested_fix": "Use this attribute to control the calling sequence after an online change.",
+      "rule_id": "R155"
+    },
+    {
+      "rule": "Compile errors occur if VAR_INPUT declarations are used in functions with call_after_online_change_slot.",
+      "suggested_fix": "Avoid using VAR_INPUT in functions with this attribute.",
+      "rule_id": "R156"
+    },
+    {
+      "rule": "The syntax for call_after_online_change_slot is {attribute 'call_after_online_change_slot' := '<slot>'}.",
+      "suggested_fix": "Specify an integer value for <slot> to define the calling sequence priority.",
+      "rule_id": "R157"
+    },
+    {
+      "rule": "Functions and programs with the attribute call_before_global_exit_slot are called after GlobalExit.",
+      "suggested_fix": "Use this attribute to control the calling sequence before GlobalExit.",
+      "rule_id": "R158"
+    },
+    {
+      "rule": "Minimize the code to be executed during an online change to avoid jitter.",
+      "suggested_fix": "Reduce the amount of code executed in online change situations.",
+      "rule_id": "R159"
+    },
+    {
+      "rule": "Functions and programs with the attribute 'call_before_global_exit_slot' must be declared above their declaration part.",
+      "suggested_fix": "Place the attribute 'call_before_global_exit_slot' on its own line above the function or program declaration.",
+      "rule_id": "R160"
+    },
+    {
+      "rule": "Compile errors occur if VAR_INPUT declarations are used in functions with the 'call_before_global_exit_slot' attribute.",
+      "suggested_fix": "Avoid using VAR_INPUT in functions with the 'call_before_global_exit_slot' attribute.",
+      "rule_id": "R161"
+    },
+    {
+      "rule": "The attribute 'call_on_type_change' must be inserted above the first line in the method declaration.",
+      "suggested_fix": "Position the 'call_on_type_change' attribute correctly in the method declaration.",
+      "rule_id": "R162"
+    },
+    {
+      "rule": "Use the attribute 'const_replaced' to activate the compiler option to replace constants.",
+      "suggested_fix": "Insert the pragma {attribute 'const_replaced'} in the declaration of a global constant.",
+      "rule_id": "R163"
+    },
+    {
+      "rule": "Use the attribute 'const_non_replaced' to deactivate the compiler option to replace constants.",
+      "suggested_fix": "Insert the pragma {attribute 'const_non_replaced'} in the declaration of a global constant.",
+      "rule_id": "R164"
+    },
+    {
+      "rule": "The attribute 'dataflow' can only be assigned to one input and one output in the function block declaration.",
+      "suggested_fix": "Ensure only one input and one output are assigned the 'dataflow' attribute.",
+      "rule_id": "R165"
+    },
+    {
+      "rule": "Use the attribute 'displaymode' to define the display mode of a single variable.",
+      "suggested_fix": "Position the 'displaymode' attribute above the variable declaration.",
+      "rule_id": "R166"
+    },
+    {
+      "rule": "Position the pragma in the line above the line containing the variable declaration.",
+      "suggested_fix": "Ensure the pragma is placed correctly above the variable declaration.",
+      "rule_id": "R167"
+    },
+    {
+      "rule": "Use {attribute 'displaymode':=<displaymode>} to set the display format.",
+      "suggested_fix": "Specify 'bin', 'dec', 'hex', or their equivalents for display format.",
+      "rule_id": "R168"
+    },
+    {
+      "rule": "Insert the pragma {attribute 'estimated-stack-usage' := '<allowed stack size in bytes>'} above the METHOD declaration.",
+      "suggested_fix": "Place the estimated stack usage pragma correctly above the method declaration.",
+      "rule_id": "R169"
+    },
+    {
+      "rule": "Use {attribute 'ExpandFully'} to make all members of arrays accessible in the Visualization Properties dialog.",
+      "suggested_fix": "Insert the ExpandFully attribute in the interface editor before the array variable.",
+      "rule_id": "R170"
+    },
+    {
+      "rule": "Use {attribute 'global_init_slot' := '<slot>'} to define the initialization sequence of POUs or global variable lists.",
+      "suggested_fix": "Assign a defined initialization slot to ensure correct initialization order.",
+      "rule_id": "R171"
+    },
+    {
+      "rule": "The pragma {attribute 'global_init_slot'} must be located above the VAR_GLOBAL or POU declaration.",
+      "suggested_fix": "Ensure the global_init_slot attribute is placed correctly above the relevant declarations.",
+      "rule_id": "R172"
+    },
+    {
+      "rule": "The pragma {attribute hide} prevents variables from being displayed in online mode.",
+      "suggested_fix": "Use the hide attribute to control visibility of variables in the input assistant.",
+      "rule_id": "R173"
+    },
+    {
+      "rule": "Use the pragma {attribute 'hide'} to prevent specific variables from being displayed.",
+      "suggested_fix": "Ensure to apply {attribute 'hide'} to the desired variable.",
+      "rule_id": "R174"
+    },
+    {
+      "rule": "Use the pragma {attribute 'hide_all_locals'} to prevent all local variables of a signature from being displayed.",
+      "suggested_fix": "Apply {attribute 'hide_all_locals'} to the function block.",
+      "rule_id": "R175"
+    },
+    {
+      "rule": "Use the pragma {attribute 'initialize_on_call'} to initialize input variables at each call of the function block.",
+      "suggested_fix": "Attach {attribute 'initialize_on_call'} to the input variable.",
+      "rule_id": "R176"
+    },
+    {
+      "rule": "Use the pragma {attribute 'init_namespace'} to initialize a STRING or WSTRING variable with the current namespace.",
+      "suggested_fix": "Apply {attribute 'init_namespace'} to the variable in the library.",
+      "rule_id": "R177"
+    },
+    {
+      "rule": "Use the pragma {attribute 'init_on_onlchange'} to initialize a variable with each online change.",
+      "suggested_fix": "Attach {attribute 'init_on_onlchange'} to the variable and set compiler defines.",
+      "rule_id": "R178"
+    },
+    {
+      "rule": "Use the pragma {attribute 'instance-path'} to initialize a local string variable with the Applications tree path.",
+      "suggested_fix": "Apply {attribute 'instance-path'} and {attribute 'noinit'} to the string variable.",
+      "rule_id": "R179"
+    },
+    {
+      "rule": "Use the pragma {attribute 'linkalways'} to mark POUs or global variable lists for always inclusion in compile information.",
+      "suggested_fix": "Apply {attribute 'linkalways'} to the desired POU or global variable list.",
+      "rule_id": "R180"
+    },
+    {
+      "rule": "Strings assigned to a shorter length variable will be cut from the back end.",
+      "suggested_fix": "Ensure the string variable is long enough to hold the assigned value.",
+      "rule_id": "R181"
+    },
+    {
+      "rule": "Use the pragma {attribute 'linkalways'} to mark POUs or global variable lists for inclusion in compile information.",
+      "suggested_fix": "Add {attribute 'linkalways'} above the POU or global variable list.",
+      "rule_id": "R182"
+    },
+    {
+      "rule": "Add the pragma above the property definition to monitor properties.",
+      "suggested_fix": "Use {attribute 'monitoring'} above the property definition.",
+      "rule_id": "R183"
+    },
+    {
+      "rule": "Use {attribute 'monitoring':='variable'} to create an implicit variable for property monitoring.",
+      "suggested_fix": "Add {attribute 'monitoring':='variable'} above the property definition.",
+      "rule_id": "R184"
+    },
+    {
+      "rule": "Use {attribute 'monitoring':='call'} for properties returning simple data types or pointers.",
+      "suggested_fix": "Ensure the property is returning a simple data type or pointer before using this attribute.",
+      "rule_id": "R185"
+    },
+    {
+      "rule": "Function call monitoring requires the pragma {attribute 'monitoring':='call'} above the function declaration.",
+      "suggested_fix": "Add {attribute 'monitoring':='call'} above the function declaration.",
+      "rule_id": "R186"
+    },
+    {
+      "rule": "For monitoring variables with an implicit call of an external function, specific conditions must be fulfilled.",
+      "suggested_fix": "Ensure the function is marked with {attribute 'monitoring' := 'call'}, is Link Always, and the variable is marked with {attribute 'monitoring_instead' := 'MyExternalFunction(a,b,c)'}.",
+      "rule_id": "R187"
+    },
+    {
+      "rule": "Use {attribute namespace} to redefine the namespace of project variables.",
+      "suggested_fix": "Apply {attribute namespace} on complete POUs, not on individual variables.",
+      "rule_id": "R188"
+    },
+    {
+      "rule": "Use {attribute 'namespace'} to define variable namespaces.",
+      "suggested_fix": "Ensure correct namespace is assigned to variables.",
+      "rule_id": "R189"
+    },
+    {
+      "rule": "Insert {attribute 'no_assign'} as the first line of a function block declaration.",
+      "suggested_fix": "Add {attribute 'no_assign'} to prevent assignment of function block instances.",
+      "rule_id": "R190"
+    },
+    {
+      "rule": "Use {attribute 'no_check'} to suppress implicit checks for a POU.",
+      "suggested_fix": "Add {attribute 'no_check'} to frequently called or approved POUs.",
+      "rule_id": "R191"
+    },
+    {
+      "rule": "Add {attribute 'no_copy'} to a variable to prevent copying during online changes.",
+      "suggested_fix": "Use {attribute 'no_copy'} for local pointer variables to avoid address issues.",
+      "rule_id": "R192"
+    },
+    {
+      "rule": "Use {attribute 'no-exit'} to suppress the call of FB_exit for a function block instance.",
+      "suggested_fix": "Add {attribute 'no-exit'} to function block instances where FB_exit should not be called.",
+      "rule_id": "R193"
+    },
+    {
+      "rule": "Use {attribute 'no_init'} to prevent implicit initialization of variables.",
+      "suggested_fix": "Add {attribute 'no_init'} to variables that should not be initialized.",
+      "rule_id": "R194"
+    },
+    {
+      "rule": "Variables with the pragma {attribute no_init} will not be initialized implicitly.",
+      "suggested_fix": "Use {attribute 'no_init'} for variables that should not be initialized.",
+      "rule_id": "R195"
+    },
+    {
+      "rule": "The pragma {attribute 'no_instance_in_retain'} should be inserted as the first line of the declaration of a function block.",
+      "suggested_fix": "Ensure to place {attribute 'no_instance_in_retain'} at the top of the function block declaration.",
+      "rule_id": "R196"
+    },
+    {
+      "rule": "The attribute {attribute 'no_virtual_actions'} can be assigned to a base class to prevent its actions from being overridden.",
+      "suggested_fix": "Use {attribute 'no_virtual_actions'} in the base class to maintain its action behavior.",
+      "rule_id": "R197"
+    },
+    {
+      "rule": "Insert the pragma {attribute 'pingroup' := '<groupname>'} in the declaration of a function block for grouping input/output pins.",
+      "suggested_fix": "Define pin groups using {attribute 'pingroup' := '<groupname>'} in function block declarations.",
+      "rule_id": "R198"
+    },
+    {
+      "rule": "The pragmas {attribute 'pin_presentation_order_inputs'} and {attribute 'pin_presentation_order_outputs'} define the display order of inputs and outputs.",
+      "suggested_fix": "Use these pragmas to specify the order of inputs and outputs in graphical language editors.",
+      "rule_id": "R199"
+    },
+    {
+      "rule": "The separator is replaced by undefined input or output parameters.",
+      "suggested_fix": "Ensure all input or output parameters are defined explicitly in the pragma.",
+      "rule_id": "R200"
+    },
+    {
+      "rule": "If the separator is not available, undefined parameters are added to the end of the sorted list.",
+      "suggested_fix": "Define all parameters explicitly to avoid undefined parameters.",
+      "rule_id": "R201"
+    },
+    {
+      "rule": "Pragmas are inserted in the first line in the declaration part of a function block.",
+      "suggested_fix": "Place pragmas at the beginning of the function block declaration.",
+      "rule_id": "R202"
+    },
+    {
+      "rule": "The attributes 'pin_presentation_order_inputs' and 'pin_presentation_order_outputs' are not evaluated when the pragma 'pingroup' is used.",
+      "suggested_fix": "Avoid using 'pingroup' if you need to evaluate these attributes.",
+      "rule_id": "R203"
+    },
+    {
+      "rule": "An obsolete pragma can be added to a data type definition to cause a user-defined alert during a build.",
+      "suggested_fix": "Use the obsolete pragma to notify users of deprecated data types.",
+      "rule_id": "R204"
+    },
+    {
+      "rule": "The obsolete pragma is valid for the current line or the subsequent line if placed separately.",
+      "suggested_fix": "Ensure the placement of the obsolete pragma is correct for intended scope.",
+      "rule_id": "R205"
+    },
+    {
+      "rule": "The pragma 'pack_mode' defines the mode a data structure is packed while being allocated.",
+      "suggested_fix": "Set the 'pack_mode' attribute on top of the data structure.",
+      "rule_id": "R206"
+    },
+    {
+      "rule": "The placeholder <value> for 'pack_mode' can have values 0, 1, 2, 4, or 8.",
+      "suggested_fix": "Choose an appropriate packing method based on structure requirements.",
+      "rule_id": "R207"
+    },
+    {
+      "rule": "The pragma 'qualified_only' restricts access to global variables to their qualified names.",
+      "suggested_fix": "Use qualified names to access global variables when 'qualified_only' is applied.",
+      "rule_id": "R208"
+    },
+    {
+      "rule": "The pragma 'reflection' is obligatory for POUs carrying the instance-path attribute.",
+      "suggested_fix": "Attach the 'reflection' attribute to signatures as required.",
+      "rule_id": "R209"
+    },
+    {
+      "rule": "The pragma 'subsequent' forces variables to be allocated in a row at one location in memory.",
+      "suggested_fix": "Use 'subsequent' to ensure contiguous memory allocation for variables.",
+      "rule_id": "R210"
+    },
+    {
+      "rule": "If one variable in the list is RETAIN, the whole list will be located in retain memory.",
+      "suggested_fix": "Be cautious with RETAIN variables in lists marked with 'subsequent'.",
+      "rule_id": "R211"
+    },
+    {
+      "rule": "The pragma 'symbol' defines which variables are to be handled in the symbol configuration.",
+      "suggested_fix": "Use 'symbol' to expose variables in the symbol configuration.",
+      "rule_id": "R212"
+    },
+    {
+      "rule": "Use the pragma {attribute 'symbol'} to define which variables are to be handled in the symbol configuration.",
+      "suggested_fix": "Ensure the pragma is correctly placed before variable declarations.",
+      "rule_id": "R213"
+    },
+    {
+      "rule": "Variables with the 'symbol' attribute will be exported to an XML file and may be downloaded to the controller.",
+      "suggested_fix": "Verify that the variables are configured correctly in the symbol configuration editor.",
+      "rule_id": "R214"
+    },
+    {
+      "rule": "Access on a symbol is defined by the pragma parameters: 'none', 'read', 'write', 'readwrite'.",
+      "suggested_fix": "Specify the appropriate access level in the pragma definition.",
+      "rule_id": "R215"
+    },
+    {
+      "rule": "To apply a pragma to a single variable, place it in the line before the variable declaration.",
+      "suggested_fix": "Ensure the pragma is positioned correctly for single variable declarations.",
+      "rule_id": "R216"
+    },
+    {
+      "rule": "To apply a pragma to all variables in a program, place it in the first line of the declaration editor.",
+      "suggested_fix": "Add the pragma at the top of the declaration section for collective application.",
+      "rule_id": "R217"
+    },
+    {
+      "rule": "Use the pragma warning disable to suppress alerts and pragma warning restore to enable them.",
+      "suggested_fix": "Utilize these pragmas to manage compiler alerts as needed.",
+      "rule_id": "R218"
+    },
+    {
+      "rule": "The pragma enable_dynamic_creation is required for using the __NEW operator for function blocks.",
+      "suggested_fix": "Insert the pragma in the first line of the function block declaration.",
+      "rule_id": "R219"
+    },
+    {
+      "rule": "Smart coding functionality assists in inserting correct identifiers.",
+      "suggested_fix": "Utilize the smart coding features for efficient identifier insertion.",
+      "rule_id": "R220"
+    },
+    {
+      "rule": "Each identifier is assigned to a data type that dictates memory space and value type.",
+      "suggested_fix": "Choose appropriate data types for identifiers based on their intended use.",
+      "rule_id": "R221"
+    },
+    {
+      "rule": "EcoStruxure Machine Expert supports all data types described by standard IEC61131-3.",
+      "suggested_fix": "Refer to IEC61131-3 for a comprehensive list of supported data types.",
+      "rule_id": "R222"
+    },
+    {
+      "rule": "BOOL type variables can have the values TRUE (1) and FALSE (0).",
+      "suggested_fix": "Ensure BOOL variables are assigned only TRUE or FALSE.",
+      "rule_id": "R223"
+    },
+    {
+      "rule": "Conversions from larger types to smaller types may result in loss of information.",
+      "suggested_fix": "Avoid converting larger data types to smaller ones without checking for potential data loss.",
+      "rule_id": "R224"
+    },
+    {
+      "rule": "If a REAL or LREAL is converted to an integer type and the value is out of range, the result will be undefined.",
+      "suggested_fix": "Handle range exceedance in the application to ensure valid conversions.",
+      "rule_id": "R225"
+    },
+    {
+      "rule": "A STRING data type variable can contain any string of characters, with a default size of 80 characters if not specified.",
+      "suggested_fix": "Specify the size of STRING variables to avoid truncation.",
+      "rule_id": "R226"
+    },
+    {
+      "rule": "If a variable is initialized with a string too long for the variable data type, the string will be cut from right to left.",
+      "suggested_fix": "Ensure the initialized string length does not exceed the defined size.",
+      "rule_id": "R227"
+    },
+    {
+      "rule": "WSTRING requires two bytes for each character and one WORD of extra memory.",
+      "suggested_fix": "Account for additional memory requirements when using WSTRING.",
+      "rule_id": "R228"
+    },
+    {
+      "rule": "The data types TIME, TIME_OF_DAY, DATE, and DATE_AND_TIME are handled internally like DWORD.",
+      "suggested_fix": "Use appropriate data types for time-related variables.",
+      "rule_id": "R229"
+    },
+    {
+      "rule": "You can use implicit checks to validate the conversion of variable types.",
+      "suggested_fix": "Implement implicit checks to ensure type conversions are valid.",
+      "rule_id": "R230"
+    },
+    {
+      "rule": "Use LTIME for high resolution timers with a size of 64 bit and resolution in nanoseconds.",
+      "suggested_fix": "Declare time using LTIME#<time declaration> with appropriate time units.",
+      "rule_id": "R231"
+    },
+    {
+      "rule": "Use implicit checks to validate the conversion of variable types.",
+      "suggested_fix": "Refer to the chapter POUs for Implicit Checks.",
+      "rule_id": "R232"
+    },
+    {
+      "rule": "When implementing a function with ANY or ANY_<type>, the data type of the call parameter is not defined as unique.",
+      "suggested_fix": "Use a predefined structure to request the value and its type within the function.",
+      "rule_id": "R233"
+    },
+    {
+      "rule": "Declare unions in user-defined types to share the same storage location.",
+      "suggested_fix": "Define a union with components that occupy the same offset.",
+      "rule_id": "R234"
+    },
+    {
+      "rule": "Use BIT data type only for particular variables within Structures.",
+      "suggested_fix": "Address single bits of a structure by name and optimize memory space.",
+      "rule_id": "R235"
+    },
+    {
+      "rule": "A reference stores the address of an object and behaves like an object in syntax.",
+      "suggested_fix": "Declare variables as REFERENCE to avoid explicit dereferencing.",
+      "rule_id": "R236"
+    },
+    {
+      "rule": "A reference does not have to be dereferenced explicitly to access the contents of the referenced object.",
+      "suggested_fix": "Use references instead of pointers for easier access.",
+      "rule_id": "R237"
+    },
+    {
+      "rule": "When passing values to input parameters of functions, if an input is declared as REFERENCE TO <data type>, a variable of the corresponding <data type> can be passed.",
+      "suggested_fix": "Declare input parameters as REFERENCE TO <data type> for direct variable passing.",
+      "rule_id": "R238"
+    },
+    {
+      "rule": "The compiler verifies that references of the same data type are assigned to each other.",
+      "suggested_fix": "Ensure that references are of the same data type before assignment.",
+      "rule_id": "R239"
+    },
+    {
+      "rule": "It is not possible to declare references like REFERENCE TO REFERENCE or ARRAY OF REFERENCE or POINTER TO REFERENCE.",
+      "suggested_fix": "Avoid declaring nested references or arrays of references.",
+      "rule_id": "R240"
+    },
+    {
+      "rule": "Use the operator __ISVALIDREF to check whether a reference points to a valid value that is unequal to 0.",
+      "suggested_fix": "Implement __ISVALIDREF checks to validate references.",
+      "rule_id": "R241"
+    },
+    {
+      "rule": "A pointer can point to a variable with any data type.",
+      "suggested_fix": "Use pointers for dynamic data type referencing.",
+      "rule_id": "R242"
+    },
+    {
+      "rule": "Dereferencing a pointer means to obtain the value currently stored at the address to which it is pointing.",
+      "suggested_fix": "Use the content operator ^ to dereference pointers.",
+      "rule_id": "R243"
+    },
+    {
+      "rule": "You can use the ADR address operator to assign the address of a variable to a pointer.",
+      "suggested_fix": "Utilize ADR to assign variable addresses to pointers.",
+      "rule_id": "R244"
+    },
+    {
+      "rule": "Function pointers can be passed to external libraries, but cannot be called within the application.",
+      "suggested_fix": "Use function pointers for external library callbacks only.",
+      "rule_id": "R245"
+    },
+    {
+      "rule": "Verify the validity of the pointers when using pointers on addresses and executing the Online Change command.",
+      "suggested_fix": "Always check pointer validity to prevent errors.",
+      "rule_id": "R246"
+    },
+    {
+      "rule": "Index access to variables of type POINTER, STRING, and WSTRING is allowed.",
+      "suggested_fix": "Use index access for pointers and strings as specified.",
+      "rule_id": "R247"
+    },
+    {
+      "rule": "Index access on pointers is arithmetic and performs implicit dereferencing.",
+      "suggested_fix": "Understand that index access modifies pointer addresses.",
+      "rule_id": "R248"
+    },
+    {
+      "rule": "You can also use References, which directly affect a value.",
+      "suggested_fix": "Consider using references for direct value manipulation.",
+      "rule_id": "R249"
+    },
+    {
+      "rule": "To monitor pointer access during runtime, use the CheckPointer function.",
+      "suggested_fix": "Implement CheckPointer during machine commissioning.",
+      "rule_id": "R250"
+    },
+    {
+      "rule": "Use the CheckPointer function to monitor pointer access during runtime.",
+      "suggested_fix": "Implement CheckPointer during machine commissioning.",
+      "rule_id": "R251"
+    },
+    {
+      "rule": "Check if the passed pointer refers to a valid memory address.",
+      "suggested_fix": "Use CheckPointer to verify memory address validity.",
+      "rule_id": "R252"
+    },
+    {
+      "rule": "Ensure the alignment of the referenced memory area fits the data type of the variable.",
+      "suggested_fix": "Implement alignment checks in CheckPointer.",
+      "rule_id": "R253"
+    },
+    {
+      "rule": "Do not edit the implicitly generated code in the declaration part.",
+      "suggested_fix": "Leave the generated code as is.",
+      "rule_id": "R254"
+    },
+    {
+      "rule": "Define user-defined data types (DUT) via creating DUT objects.",
+      "suggested_fix": "Create DUT objects in the POUs tree or Devices tree.",
+      "rule_id": "R255"
+    },
+    {
+      "rule": "Use unique naming for user-defined data types.",
+      "suggested_fix": "Follow recommendations for naming to ensure uniqueness.",
+      "rule_id": "R256"
+    },
+    {
+      "rule": "Declare arrays with defined length and variable length.",
+      "suggested_fix": "Use ARRAY syntax for declaration.",
+      "rule_id": "R257"
+    },
+    {
+      "rule": "Use LOWER_BOUND and UPPER_BOUND operators to get array limits.",
+      "suggested_fix": "Implement these operators in your code.",
+      "rule_id": "R258"
+    },
+    {
+      "rule": "Initialize arrays completely or partially as needed.",
+      "suggested_fix": "Follow the provided examples for initialization.",
+      "rule_id": "R259"
+    },
+    {
+      "rule": "Use the correct syntax for declaring arrays.",
+      "suggested_fix": "Refer to the syntax examples for array declaration.",
+      "rule_id": "R260"
+    },
+    {
+      "rule": "Structures must begin with TYPE and STRUCT and end with END_STRUCT and END_TYPE.",
+      "suggested_fix": "Ensure all structures follow the correct syntax.",
+      "rule_id": "R261"
+    },
+    {
+      "rule": "Variables in structures may not be assigned to addresses (AT declaration is not allowed).",
+      "suggested_fix": "Avoid using AT declaration in structures.",
+      "rule_id": "R262"
+    },
+    {
+      "rule": "Initializations with variables in structures are not allowed.",
+      "suggested_fix": "Use direct values for initialization instead of variables.",
+      "rule_id": "R263"
+    },
+    {
+      "rule": "Access structure components using the syntax <structurename>.<componentname>.",
+      "suggested_fix": "Follow the correct syntax for accessing structure components.",
+      "rule_id": "R264"
+    },
+    {
+      "rule": "The data type BIT can only be defined in structures and consumes memory space of 1 bit.",
+      "suggested_fix": "Define BIT variables only within structures.",
+      "rule_id": "R265"
+    },
+    {
+      "rule": "References and pointers on BIT variables are not allowed.",
+      "suggested_fix": "Do not use references or pointers with BIT variables.",
+      "rule_id": "R266"
+    },
+    {
+      "rule": "BIT variables are not allowed in arrays.",
+      "suggested_fix": "Avoid placing BIT variables in arrays.",
+      "rule_id": "R267"
+    },
+    {
+      "rule": "In a two-dimensional array, access elements using <Array name>[Index1,Index2].",
+      "suggested_fix": "Use the correct indexing syntax for two-dimensional arrays.",
+      "rule_id": "R268"
+    },
+    {
+      "rule": "The function CheckBounds must be available to access array elements properly during runtime.",
+      "suggested_fix": "Ensure CheckBounds function is implemented for array access.",
+      "rule_id": "R269"
+    },
+    {
+      "rule": "Boundary violations in array access must be handled appropriately.",
+      "suggested_fix": "Implement error handling for boundary violations.",
+      "rule_id": "R270"
+    },
+    {
+      "rule": "The default implementation of CheckBounds must return the index itself if within range, or the corresponding limit if out of range.",
+      "suggested_fix": "Follow the default implementation guidelines for CheckBounds.",
+      "rule_id": "R271"
+    },
+    {
+      "rule": "The usage of references and pointer on BIT variables is not possible.",
+      "suggested_fix": "Avoid using references and pointers with BIT variables.",
+      "rule_id": "R272"
+    },
+    {
+      "rule": "Local enumeration declaration is only possible within TYPE.",
+      "suggested_fix": "Declare enumerations only within TYPE.",
+      "rule_id": "R273"
+    },
+    {
+      "rule": "If a default value is not defined in the enumeration declaration, the variable is initialized with the value of the first enumeration component.",
+      "suggested_fix": "Define a default value in the enumeration declaration to avoid unexpected initialization.",
+      "rule_id": "R274"
+    },
+    {
+      "rule": "You can use the type name of enumerations to disambiguate access to an enumeration constant.",
+      "suggested_fix": "Use the enumeration type name as a scope operator when accessing constants.",
+      "rule_id": "R275"
+    },
+    {
+      "rule": "Arithmetic operations with variables of the enumeration type are not allowed.",
+      "suggested_fix": "Avoid performing arithmetic operations on enumeration type variables.",
+      "rule_id": "R276"
+    },
+    {
+      "rule": "Assignment of a constant value to a variable of the enumeration type is not allowed if the constant does not correspond to an enumeration value.",
+      "suggested_fix": "Ensure constant values assigned to enumeration variables are valid enumeration values.",
+      "rule_id": "R277"
+    },
+    {
+      "rule": "Assignment of a non-constant value to a variable of the enumeration type is not allowed if the non-constant has another data type than the enumeration type.",
+      "suggested_fix": "Ensure non-constant values assigned to enumeration variables match the enumeration type.",
+      "rule_id": "R278"
+    },
+    {
+      "rule": "You can specify explicitly the base data type of the enumeration, which by default is INT.",
+      "suggested_fix": "Explicitly define the base data type for enumerations if needed.",
+      "rule_id": "R279"
+    },
+    {
+      "rule": "A subrange type is a user-defined type whose range of values is only a subset of that of the basic data type.",
+      "suggested_fix": "Define subrange types to restrict value ranges appropriately.",
+      "rule_id": "R280"
+    },
+    {
+      "rule": "You can do the declaration of a subrange type in a DUT object or declare a variable directly with a subrange type.",
+      "suggested_fix": "Choose the appropriate method for declaring subrange types based on context.",
+      "rule_id": "R281"
+    },
+    {
+      "rule": "Declare a DUT object using the syntax: TYPE <name>: <Inttype> (<ug>..<og>) END_TYPE;",
+      "suggested_fix": "Ensure the declaration follows the specified syntax.",
+      "rule_id": "R282"
+    },
+    {
+      "rule": "<name> must be a valid IEC identifier.",
+      "suggested_fix": "Use a valid IEC identifier for <name>.",
+      "rule_id": "R283"
+    },
+    {
+      "rule": "<inttype> must be one of the data types: SINT, USINT, INT, UINT, DINT, UDINT, BYTE, WORD, DWORD (LINT, ULINT, LWORD).",
+      "suggested_fix": "Select a valid data type for <inttype>.",
+      "rule_id": "R284"
+    },
+    {
+      "rule": "<ug> must be a constant compatible with the basic type, setting the lower boundary of the range types.",
+      "suggested_fix": "Ensure <ug> is a compatible constant for the lower boundary.",
+      "rule_id": "R285"
+    },
+    {
+      "rule": "<og> must be a constant compatible with the basic type, setting the upper boundary of the range types.",
+      "suggested_fix": "Ensure <og> is a compatible constant for the upper boundary.",
+      "rule_id": "R286"
+    },
+    {
+      "rule": "If a value assigned to a subrange type does not match the range, a message will be issued.",
+      "suggested_fix": "Ensure assigned values are within the defined range.",
+      "rule_id": "R287"
+    },
+    {
+      "rule": "Use CheckRangeSigned, CheckLRangeSigned, CheckRangeUnsigned, or CheckLRangeUnsigned to observe range bounds during runtime.",
+      "suggested_fix": "Add appropriate check functions to the application.",
+      "rule_id": "R288"
+    },
+    {
+      "rule": "Do not change the declaration part of an implicit check function.",
+      "suggested_fix": "Follow the instructions to avoid unintended equipment operation.",
+      "rule_id": "R289"
+    },
+    {
+      "rule": "The assignment of a variable belonging to a signed subrange type entails an implicit call to CheckRangeSigned.",
+      "suggested_fix": "Understand that assignments will be checked implicitly.",
+      "rule_id": "R290"
+    },
+    {
+      "rule": "If neither CheckRange functions are available, no type checking of subrange types occurs during runtime.",
+      "suggested_fix": "Ensure CheckRange functions are available for type checking.",
+      "rule_id": "R291"
+    },
+    {
+      "rule": "Create designator names that are relevant, short, and self-explanatory.",
+      "suggested_fix": "Use descriptive names for designators.",
+      "rule_id": "R292"
+    },
+    {
+      "rule": "Capitalize the first letter of each word in the basis name and write the rest in lower case letters.",
+      "suggested_fix": "Follow the capitalization guideline for designators.",
+      "rule_id": "R293"
+    },
+    {
+      "rule": "Designators should not contain more than 20 characters.",
+      "suggested_fix": "Limit designator length to 20 characters or adjust as necessary.",
+      "rule_id": "R294"
+    },
+    {
+      "rule": "If using abbreviations, do not have more than 3 capital letters in sequence.",
+      "suggested_fix": "Limit capital letters in abbreviations to 3 in sequence.",
+      "rule_id": "R295"
+    },
+    {
+      "rule": "Use only valid characters in designators: 0...9, A...Z, a...z.",
+      "suggested_fix": "Ensure designators contain only valid characters.",
+      "rule_id": "R296"
+    },
+    {
+      "rule": "Use an underline as a separator for prefixes, but do not use underscores in the basis name.",
+      "suggested_fix": "Follow the naming convention for prefixes.",
+      "rule_id": "R297"
+    },
+    {
+      "rule": "Recommended designators should be used instead of not recommended ones.",
+      "suggested_fix": "Adopt recommended designators for clarity.",
+      "rule_id": "R298"
+    },
+    {
+      "rule": "Use the scope prefix to indicate the scope of variables and constants.",
+      "suggested_fix": "Prefix local variables with no prefix, global variables with G_, and global constants with Gc_.",
+      "rule_id": "R299"
+    },
+    {
+      "rule": "Use the data type prefix to identify the data type of variables and constants.",
+      "suggested_fix": "Use standard prefixes like x for BOOL, by for BYTE, w for WORD, dw for DWORD, etc.",
+      "rule_id": "R300"
+    },
+    {
+      "rule": "Use the property prefix to identify properties of variables and constants.",
+      "suggested_fix": "Prefix local constants with c_ and retain variables with r_.",
+      "rule_id": "R301"
+    },
+    {
+      "rule": "Follow the obligatory order for prefixes: [scope][property][_][type][identifier].",
+      "suggested_fix": "Ensure that scope and property prefixes are separated from type prefixes by an underscore.",
+      "rule_id": "R302"
+    },
+    {
+      "rule": "Use an underscore to separate program organization units (POUs) from identifiers.",
+      "suggested_fix": "Format POUs as [POU][_][identifier].",
+      "rule_id": "R303"
+    },
+    {
+      "rule": "Use the additional namespace prefix for libraries.",
+      "suggested_fix": "Format as [namespace].[scope][property][_][type][identifier].",
+      "rule_id": "R304"
+    },
+    {
+      "rule": "Dependent POUs do not have prefixes, while properties receive the type prefix of their return value.",
+      "suggested_fix": "Define methods and actions without prefixes and use type prefixes for properties.",
+      "rule_id": "R305"
+    },
+    {
+      "rule": "Do not declare constants as RETAIN or PERSISTENT.",
+      "suggested_fix": "Declare constants without RETAIN or PERSISTENT.",
+      "rule_id": "R306"
+    },
+    {
+      "rule": "Do not declare any RETAIN variables within POUs.",
+      "suggested_fix": "Declare RETAIN variables outside of POUs.",
+      "rule_id": "R307"
+    },
+    {
+      "rule": "Use a short acronym as namespace for libraries.",
+      "suggested_fix": "Follow the naming convention for namespaces.",
+      "rule_id": "R308"
+    },
+    {
+      "rule": "Do not change the default namespace of a library.",
+      "suggested_fix": "Keep the default namespace unchanged.",
+      "rule_id": "R309"
+    },
+    {
+      "rule": "Capitalize the first letter of each word in the basis name of a POU.",
+      "suggested_fix": "Follow the capitalization rule for POU names.",
+      "rule_id": "R310"
+    },
+    {
+      "rule": "Write the rest of the POU name in lower case letters.",
+      "suggested_fix": "Use lower case for the remainder of the POU name.",
+      "rule_id": "R311"
+    },
+    {
+      "rule": "Form a composite POU name from a verb and a noun.",
+      "suggested_fix": "Use a verb-noun structure for POU names.",
+      "rule_id": "R312"
+    },
+    {
+      "rule": "Verify operands and results used in mathematical operations to avoid arithmetic overflow.",
+      "suggested_fix": "Check for potential overflows in arithmetic operations.",
+      "rule_id": "R313"
+    },
+    {
+      "rule": "Always verify the operands and results used in mathematical operations to avoid arithmetic overflow.",
+      "suggested_fix": "Implement checks for operand values before performing operations.",
+      "rule_id": "R314"
+    },
+    {
+      "rule": "Negative TIME values are undefined.",
+      "suggested_fix": "Ensure that TIME values are non-negative before performing operations.",
+      "rule_id": "R315"
+    },
+    {
+      "rule": "Different target systems may behave differently concerning a division by zero error.",
+      "suggested_fix": "Use check functions to verify the value of the divisor before division.",
+      "rule_id": "R316"
+    },
+    {
+      "rule": "Use the check functions described in this document, or write your own checks to avoid division by zero in the programming code.",
+      "suggested_fix": "Implement CheckDivDInt, CheckDivLint, CheckDivReal, or CheckDivLReal functions before division operations.",
+      "rule_id": "R317"
+    },
+    {
+      "rule": "The operator DIV uses the output of function CheckDivReal as a divisor.",
+      "suggested_fix": "Ensure CheckDivReal is implemented to handle division by zero.",
+      "rule_id": "R318"
+    },
+    {
+      "rule": "Division by zero is prohibited.",
+      "suggested_fix": "Use check functions to avoid division by zero.",
+      "rule_id": "R319"
+    },
+    {
+      "rule": "The MOVE operator is possible for all data types.",
+      "suggested_fix": "Ensure variable types are appropriate for assignment.",
+      "rule_id": "R320"
+    },
+    {
+      "rule": "SIZEOF operator returns an unsigned value.",
+      "suggested_fix": "Use appropriate data type based on the size of the variable.",
+      "rule_id": "R321"
+    },
+    {
+      "rule": "Bitstring operators must match the IEC1131-3 standard.",
+      "suggested_fix": "Use only AND, OR, XOR, NOT operators.",
+      "rule_id": "R322"
+    },
+    {
+      "rule": "XOR allows adding additional inputs.",
+      "suggested_fix": "Perform XOR operation sequentially for more than two inputs.",
+      "rule_id": "R323"
+    },
+    {
+      "rule": "The resulting bit will be 1 if the corresponding input bit is 0 and vice versa.",
+      "suggested_fix": "Ensure correct implementation of bitwise NOT operation.",
+      "rule_id": "R324"
+    },
+    {
+      "rule": "If n exceeds the data type width, it depends on the target system how BYTE, WORD, DWORD and LWORD operands will be filled.",
+      "suggested_fix": "Check target system behavior for overflow in bit-shift operations.",
+      "rule_id": "R325"
+    },
+    {
+      "rule": "The amount of bits which is considered for the arithmetic operation depends on the data type of the input variable.",
+      "suggested_fix": "Use the smallest possible data type for constant input variables.",
+      "rule_id": "R326"
+    },
+    {
+      "rule": "The data type of the output variable has no effect at all on the arithmetic operation.",
+      "suggested_fix": "Focus on input variable data types for arithmetic operations.",
+      "rule_id": "R327"
+    },
+    {
+      "rule": "In ROL, the bit that is furthest to the left will be reinserted from the right.",
+      "suggested_fix": "Ensure correct implementation of left rotation logic.",
+      "rule_id": "R328"
+    },
+    {
+      "rule": "In ROR, the bit that is furthest to the left will be reinserted from the left.",
+      "suggested_fix": "Ensure correct implementation of right rotation logic.",
+      "rule_id": "R329"
+    },
+    {
+      "rule": "Ensure that variables of identical data types are used in selection operations.",
+      "suggested_fix": "Use the same data type for IN0, IN1, and OUT in selection operations.",
+      "rule_id": "R330"
+    },
+    {
+      "rule": "Assigning function block instances to interface variables is not supported.",
+      "suggested_fix": "Do not assign function block instances to interface variables.",
+      "rule_id": "R331"
+    },
+    {
+      "rule": "An expression occurring ahead of IN0 will not be processed if G is TRUE.",
+      "suggested_fix": "Rearrange expressions to ensure they are processed correctly based on the value of G.",
+      "rule_id": "R332"
+    },
+    {
+      "rule": "An expression occurring ahead of IN1 will not be processed if G is FALSE.",
+      "suggested_fix": "Rearrange expressions to ensure they are processed correctly based on the value of G.",
+      "rule_id": "R333"
+    },
+    {
+      "rule": "K in MUX must be of type BYTE, WORD, DWORD, LWORD, SINT, USINT, INT, UINT, DINT, LINT, ULINT, or UDINT.",
+      "suggested_fix": "Ensure K is of a valid type when using MUX.",
+      "rule_id": "R334"
+    },
+    {
+      "rule": "An expression occurring ahead of an input other than INk will not be processed to save run time.",
+      "suggested_fix": "Limit expressions to those directly related to INk for efficiency.",
+      "rule_id": "R335"
+    },
+    {
+      "rule": "The compiler verifies the identity of types and returns compiler errors if they do not match.",
+      "suggested_fix": "Ensure all variables in operations are of the same data type to avoid compiler errors.",
+      "rule_id": "R336"
+    },
+    {
+      "rule": "The LT operator returns TRUE when the first operand is less than the second.",
+      "suggested_fix": "Ensure operands are of compatible data types.",
+      "rule_id": "R337"
+    },
+    {
+      "rule": "The LE operator returns TRUE when the first operand is less than or equal to the second.",
+      "suggested_fix": "Ensure operands are of compatible data types.",
+      "rule_id": "R338"
+    },
+    {
+      "rule": "The GE operator returns TRUE when the first operand is greater than or equal to the second.",
+      "suggested_fix": "Ensure operands are of compatible data types.",
+      "rule_id": "R339"
+    },
+    {
+      "rule": "The EQ operator returns TRUE when the operands are equal.",
+      "suggested_fix": "Ensure operands are of compatible data types.",
+      "rule_id": "R340"
+    },
+    {
+      "rule": "The NE operator returns TRUE when the operands are not equal.",
+      "suggested_fix": "Ensure operands are of compatible data types.",
+      "rule_id": "R341"
+    },
+    {
+      "rule": "The ADR operator returns the address of its argument in a DWORD.",
+      "suggested_fix": "Use ADR with valid function names, program names, or method names.",
+      "rule_id": "R342"
+    },
+    {
+      "rule": "Assign the value of any POINTER TO type variable(s) prior to the first use within a POU.",
+      "suggested_fix": "Reassign pointers in each cycle to avoid invalid memory access.",
+      "rule_id": "R343"
+    },
+    {
+      "rule": "Dereference a pointer using the content operator ^ after the pointer identifier.",
+      "suggested_fix": "Ensure the pointer is valid before dereferencing.",
+      "rule_id": "R344"
+    },
+    {
+      "rule": "Verify the validity of pointers when using them on addresses.",
+      "suggested_fix": "Check pointers before executing Online Change commands.",
+      "rule_id": "R345"
+    },
+    {
+      "rule": "The BITADR operator returns the bit offset within the segment in a DWORD.",
+      "suggested_fix": "Ensure correct settings for byte addressing.",
+      "rule_id": "R346"
+    },
+    {
+      "rule": "It is not allowed to convert implicitly from a larger type to a smaller type.",
+      "suggested_fix": "Perform special type conversions for such cases.",
+      "rule_id": "R347"
+    },
+    {
+      "rule": "Typed conversion syntax is <elem.type1>_TO_<elem.type2>.",
+      "suggested_fix": "Use the correct syntax for typed conversions.",
+      "rule_id": "R348"
+    },
+    {
+      "rule": "At ...TO_STRING conversions, the string is generated as left-justified and will be cut from the right side if defined too short.",
+      "suggested_fix": "Ensure string definitions are long enough to avoid truncation.",
+      "rule_id": "R349"
+    },
+    {
+      "rule": "The conversion results for number types and for string types depend on the state of the operand in BOOL_TO conversions.",
+      "suggested_fix": "Check operand state to determine conversion results.",
+      "rule_id": "R350"
+    },
+    {
+      "rule": "The result of TO_BOOL conversions is TRUE when the operand is not equal to 0.",
+      "suggested_fix": "Use non-zero values to get TRUE results.",
+      "rule_id": "R351"
+    },
+    {
+      "rule": "Conversion from an integral number type to another number type must follow the syntax <INT data type>_TO_<INT data type>.",
+      "suggested_fix": "Follow the correct syntax for integral conversions.",
+      "rule_id": "R352"
+    },
+    {
+      "rule": "If the number you are converting exceeds the range limit, the first bytes for the number will be ignored.",
+      "suggested_fix": "Ensure numbers are within range before conversion.",
+      "rule_id": "R353"
+    },
+    {
+      "rule": "When converting to type STRING, the total number of digits is limited to 16.",
+      "suggested_fix": "Ensure the (L)REAL number has 16 or fewer digits.",
+      "rule_id": "R354"
+    },
+    {
+      "rule": "If the length of the STRING is defined too short, it will be cut from the right end.",
+      "suggested_fix": "Define the STRING length appropriately.",
+      "rule_id": "R355"
+    },
+    {
+      "rule": "The date will be stored internally in a DWORD in seconds since Jan. 1, 1970.",
+      "suggested_fix": "Ensure the date is within the valid range.",
+      "rule_id": "R356"
+    },
+    {
+      "rule": "The operand of type STRING must represent a valid value of the target data type.",
+      "suggested_fix": "Ensure the STRING matches the IEC61131-3 standard.",
+      "rule_id": "R357"
+    },
+    {
+      "rule": "If the data type of the operand does not match the target type, the result is undefined.",
+      "suggested_fix": "Ensure the data type of the operand matches the target type.",
+      "rule_id": "R358"
+    },
+    {
+      "rule": "When converting mismatched data types or when the value being converted is larger than the target data type, it may result in injury or equipment damage.",
+      "suggested_fix": "Follow conversion guidelines carefully.",
+      "rule_id": "R359"
+    },
+    {
+      "rule": "The result of conversion functions is not defined if the input value cannot be represented with a DINT or INT.",
+      "suggested_fix": "Ensure input values can be represented with DINT or INT.",
+      "rule_id": "R360"
+    },
+    {
+      "rule": "The behavior of input values that cannot be represented with a DINT or INT is platform-dependent.",
+      "suggested_fix": "Test on the specific platform to understand behavior.",
+      "rule_id": "R361"
+    },
+    {
+      "rule": "The size of the operands must be taken into account for successful conversions.",
+      "suggested_fix": "Check operand sizes before performing conversions.",
+      "rule_id": "R362"
+    },
+    {
+      "rule": "The input type must not be specified explicitly for overloaded conversions.",
+      "suggested_fix": "Use implicit type conversion without specifying input type.",
+      "rule_id": "R363"
+    },
+    {
+      "rule": "The output variable for SQRT, LN, LOG, EXP, SIN, COS, and TAN must be of type REAL or LREAL.",
+      "suggested_fix": "Ensure output variable is of type REAL or LREAL.",
+      "rule_id": "R364"
+    },
+    {
+      "rule": "The input variable for trigonometric functions (COS, TAN, ASIN, ACOS, ATAN) can be of any numeric basic data type.",
+      "suggested_fix": "Ensure input variable is of a numeric basic data type.",
+      "rule_id": "R365"
+    },
+    {
+      "rule": "The output variable for trigonometric functions (COS, TAN, ASIN, ACOS, ATAN) must be of type REAL or LREAL.",
+      "suggested_fix": "Change output variable type to REAL or LREAL.",
+      "rule_id": "R366"
+    },
+    {
+      "rule": "The input variable for the EXPT function can be of numeric basic data types (SINT, USINT, INT, UINT, DINT, UDINT, LINT, ULINT, REAL, LREAL, BYTE, WORD, DWORD, and LWORD).",
+      "suggested_fix": "Ensure input variable is one of the specified numeric basic data types.",
+      "rule_id": "R367"
+    },
+    {
+      "rule": "The output variable for the EXPT function must be of type REAL or LREAL.",
+      "suggested_fix": "Change output variable type to REAL or LREAL.",
+      "rule_id": "R368"
+    },
+    {
+      "rule": "The result of the EXPT function is not defined if the base is negative or if the base is zero and the exponent is \u2264 0.",
+      "suggested_fix": "Avoid using negative base or zero base with non-positive exponent.",
+      "rule_id": "R369"
+    },
+    {
+      "rule": "__DELETE operator deallocates memory for objects allocated via __NEW and has no return value.",
+      "suggested_fix": "Use __DELETE correctly after allocating with __NEW.",
+      "rule_id": "R370"
+    },
+    {
+      "rule": "When using __DELETE on a pointer to a function block, the FB_Exit method will be called before the pointer is set to NULL.",
+      "suggested_fix": "Ensure FB_Exit is implemented in the function block before using __DELETE.",
+      "rule_id": "R371"
+    },
+    {
+      "rule": "Do not use a variable of type POINTER TO BaseFB with __DELETE if the base function block implements no FB_Exit function.",
+      "suggested_fix": "Use the exact data type of the derived function block.",
+      "rule_id": "R372"
+    },
+    {
+      "rule": "Use the exact data type of the derived function block and not that of the base function block.",
+      "suggested_fix": "Ensure to use the derived function block's data type.",
+      "rule_id": "R373"
+    },
+    {
+      "rule": "Do not use a variable of type POINTER TO BaseFB.",
+      "suggested_fix": "Use a specific derived function block pointer instead.",
+      "rule_id": "R374"
+    },
+    {
+      "rule": "If <type> is scalar, the optional operand <length> has to be set additionally.",
+      "suggested_fix": "Specify the length when creating an array of scalar types.",
+      "rule_id": "R375"
+    },
+    {
+      "rule": "A function block created with __NEW has a fixed memory area.",
+      "suggested_fix": "Avoid modifying the data layout of function blocks created with __NEW.",
+      "rule_id": "R376"
+    },
+    {
+      "rule": "Only function blocks out of libraries and function blocks with attribute enable_dynamic_creation are allowed for the __NEW operator.",
+      "suggested_fix": "Use appropriate function blocks that meet this criterion.",
+      "rule_id": "R377"
+    },
+    {
+      "rule": "The code for memory allocation needs to be non-re-entrant.",
+      "suggested_fix": "Use a semaphore to manage memory allocation safely.",
+      "rule_id": "R378"
+    },
+    {
+      "rule": "If no memory could be allocated, __NEW will return 0.",
+      "suggested_fix": "Check for a return value of 0 after using __NEW.",
+      "rule_id": "R379"
+    },
+    {
+      "rule": "__DELETE should be used for deallocating memory allocated by __NEW.",
+      "suggested_fix": "Always pair __NEW with __DELETE for memory management.",
+      "rule_id": "R380"
+    },
+    {
+      "rule": "__QUERYINTERFACE enables a type conversion of an interface reference to another.",
+      "suggested_fix": "Ensure the source implements the interface before using __QUERYINTERFACE.",
+      "rule_id": "R381"
+    },
+    {
+      "rule": "An explicit conversion requires that both ITF_Source and ITF_Dest extend the interface __System.IQueryInterface.",
+      "suggested_fix": "Ensure both ITF_Source and ITF_Dest extend __System.IQueryInterface.",
+      "rule_id": "R382"
+    },
+    {
+      "rule": "The operator __QUERYINTERFACE returns TRUE if the conversion is successful, otherwise it returns FALSE.",
+      "suggested_fix": "Check the conditions for successful conversion when using __QUERYINTERFACE.",
+      "rule_id": "R383"
+    },
+    {
+      "rule": "The operator __QUERYPOINTER requires an interface reference for the first operand and an untyped pointer for the second operand.",
+      "suggested_fix": "Ensure the first operand is an interface reference and the second is an untyped pointer.",
+      "rule_id": "R384"
+    },
+    {
+      "rule": "The operator __QUERYPOINTER returns TRUE if the conversion is successful, otherwise it returns FALSE.",
+      "suggested_fix": "Verify the conversion conditions when using __QUERYPOINTER.",
+      "rule_id": "R385"
+    },
+    {
+      "rule": "The AND_THEN operator performs a short-circuiting AND operation.",
+      "suggested_fix": "Use AND_THEN for short-circuiting behavior in BOOL and BIT operations.",
+      "rule_id": "R386"
+    },
+    {
+      "rule": "The OR_ELSE operator performs a short-circuiting OR operation.",
+      "suggested_fix": "Use OR_ELSE for short-circuiting behavior in BOOL and BIT operations.",
+      "rule_id": "R387"
+    },
+    {
+      "rule": "The AND_THEN operator is only allowed in structured text (ST).",
+      "suggested_fix": "Use AND_THEN exclusively in structured text programming.",
+      "rule_id": "R388"
+    },
+    {
+      "rule": "The OR_ELSE operator is only allowed in structured text (ST).",
+      "suggested_fix": "Use OR_ELSE exclusively in structured text programming.",
+      "rule_id": "R389"
+    },
+    {
+      "rule": "Use of OR_ELSE operator does not execute all expressions.",
+      "suggested_fix": "Use standard OR operation to ensure all expressions are evaluated.",
+      "rule_id": "R390"
+    },
+    {
+      "rule": "The __TRY, __CATCH, __FINALLY, __ENDTRY operators are not specified by the IEC 61131-3 standard.",
+      "suggested_fix": "Use these operators for specific handling of exceptions in IEC code.",
+      "rule_id": "R391"
+    },
+    {
+      "rule": "The variable <exception> must be of type __SystemExceptionCode.",
+      "suggested_fix": "Ensure <exception> is declared as __SystemExceptionCode.",
+      "rule_id": "R392"
+    },
+    {
+      "rule": "Use the Stop execution on handled exceptions command to stop execution at the error location.",
+      "suggested_fix": "Implement the command to halt execution despite programmed exception handling.",
+      "rule_id": "R393"
+    },
+    {
+      "rule": "The __VARINFO operator is not specified by the IEC 61131-3 standard.",
+      "suggested_fix": "Use __VARINFO to obtain runtime information about a variable.",
+      "rule_id": "R394"
+    },
+    {
+      "rule": "A variable with data type __SYSTEM.VAR_INFO contains specific elements.",
+      "suggested_fix": "Ensure to define all elements of __SYSTEM.VAR_INFO when using it.",
+      "rule_id": "R395"
+    },
+    {
+      "rule": "Use global scope operator to access global variables with the same name as local variables.",
+      "suggested_fix": "Prefix the variable name with a dot (.) to refer to the global variable.",
+      "rule_id": "R396"
+    },
+    {
+      "rule": "Use global variable list name as a namespace to avoid naming conflicts.",
+      "suggested_fix": "Prefix the variable name with <global variable list name> to access the desired variable.",
+      "rule_id": "R397"
+    },
+    {
+      "rule": "Library namespace can be added to a POU to make access unique.",
+      "suggested_fix": "Prefix the POU name with <library namespace> to differentiate it.",
+      "rule_id": "R398"
+    },
+    {
+      "rule": "Use enumeration name to disambiguate access to enumeration constants.",
+      "suggested_fix": "Prefix the constant name with <enumeration name> to avoid conflicts.",
+      "rule_id": "R399"
+    },
+    {
+      "rule": "Variables in GVLs or POUs of the Global node can be accessed with the operator '__POOL.'.",
+      "suggested_fix": "Prefix the variable name with '__POOL.' to access global variables.",
+      "rule_id": "R400"
+    },
+    {
+      "rule": "The INI operator is obsolete but can still be used for compatibility.",
+      "suggested_fix": "Use FB_init method for initializing retain variables instead of INI.",
+      "rule_id": "R401"
+    },
+    {
+      "rule": "Use the INI operator to initialize retain variables in a function block.",
+      "suggested_fix": "Assign the INI operator to a boolean variable for initialization.",
+      "rule_id": "R402"
+    },
+    {
+      "rule": "TIME constants must be declared using the syntax t#<time declaration>.",
+      "suggested_fix": "Use the correct syntax for TIME constants.",
+      "rule_id": "R403"
+    },
+    {
+      "rule": "TIME constants must include time units in the correct sequence: d, h, m, s, ms.",
+      "suggested_fix": "Ensure time units are in the correct order.",
+      "rule_id": "R404"
+    },
+    {
+      "rule": "LTIME constants must be declared using the syntax LTIME#<time declaration>.",
+      "suggested_fix": "Use the correct syntax for LTIME constants.",
+      "rule_id": "R405"
+    },
+    {
+      "rule": "DATE constants must be declared using the syntax d#<date declaration>.",
+      "suggested_fix": "Use the correct syntax for DATE constants.",
+      "rule_id": "R406"
+    },
+    {
+      "rule": "DATE declaration must be in the format <year-month-day>.",
+      "suggested_fix": "Ensure DATE declaration follows the correct format.",
+      "rule_id": "R407"
+    },
+    {
+      "rule": "DATE_AND_TIME constants must be declared using the syntax dt#<date and time declaration>.",
+      "suggested_fix": "Use the correct syntax for DATE_AND_TIME constants.",
+      "rule_id": "R408"
+    },
+    {
+      "rule": "DATE_AND_TIME declaration must be in the format <year-month-day-hour:minute:second>.",
+      "suggested_fix": "Ensure DATE_AND_TIME declaration follows the correct format.",
+      "rule_id": "R409"
+    },
+    {
+      "rule": "TIME_OF_DAY constants must be declared using the syntax tod#<time declaration>.",
+      "suggested_fix": "Use the correct syntax for TIME_OF_DAY constants.",
+      "rule_id": "R410"
+    },
+    {
+      "rule": "TIME_OF_DAY declaration must be in the format <hour:minute:second>.",
+      "suggested_fix": "Ensure TIME_OF_DAY declaration follows the correct format.",
+      "rule_id": "R411"
+    },
+    {
+      "rule": "Number constants must be represented with the base followed by the number sign (#) for non-decimal numbers.",
+      "suggested_fix": "Use the correct representation for number constants.",
+      "rule_id": "R412"
+    },
+    {
+      "rule": "Implicit conversions from larger to smaller variable types are not permitted.",
+      "suggested_fix": "Use type conversion functions instead.",
+      "rule_id": "R413"
+    },
+    {
+      "rule": "REAL and LREAL constants must be represented using the standard American format with a decimal point.",
+      "suggested_fix": "Use the correct format for REAL and LREAL constants.",
+      "rule_id": "R414"
+    },
+    {
+      "rule": "Use the standard American format with the decimal point for REAL and LREAL constants.",
+      "suggested_fix": "Use decimal fractions like 7.4 instead of 7,4.",
+      "rule_id": "R415"
+    },
+    {
+      "rule": "STRING constants must be enclosed in single quotation marks.",
+      "suggested_fix": "Use 'Hello world' for STRING constants.",
+      "rule_id": "R416"
+    },
+    {
+      "rule": "WSTRING constants must be enclosed in double quotation marks.",
+      "suggested_fix": "Use \"This is a WString\" for WSTRING constants.",
+      "rule_id": "R417"
+    },
+    {
+      "rule": "Use hexadecimal codes in strings with a dollar sign followed by two hexadecimal numbers.",
+      "suggested_fix": "Use '$41' for 'A' in hexadecimal.",
+      "rule_id": "R418"
+    },
+    {
+      "rule": "Typed literals must be prefixed with the desired data type in uppercase.",
+      "suggested_fix": "Use DINT#34 for a DINT typed literal.",
+      "rule_id": "R419"
+    },
+    {
+      "rule": "Variables can be declared locally or globally.",
+      "suggested_fix": "Declare variables in the declaration part of a POU or in a global variable list.",
+      "rule_id": "R420"
+    },
+    {
+      "rule": "Access array components using the syntax <array name>[Index1, Index2].",
+      "suggested_fix": "Use myArray[1, 2] to access a 2-dimensional array.",
+      "rule_id": "R421"
+    },
+    {
+      "rule": "Access structure variables using the syntax <structure name>.<variable name>.",
+      "suggested_fix": "Use myStruct.myVar to access a structure variable.",
+      "rule_id": "R422"
+    },
+    {
+      "rule": "Access function block and program variables using the syntax <function block name>.<variable name>.",
+      "suggested_fix": "Use myFunctionBlock.myVar to access a function block variable.",
+      "rule_id": "R423"
+    },
+    {
+      "rule": "Bit indexing in integer variables is 0-based and uses the syntax <variablename>.<bitindex>.",
+      "suggested_fix": "Use a.2 to access the third bit of variable a.",
+      "rule_id": "R424"
+    },
+    {
+      "rule": "Do not assign bit access to a VAR_IN_OUT variable.",
+      "suggested_fix": "Avoid using VAR_IN_OUT for bit access.",
+      "rule_id": "R425"
+    },
+    {
+      "rule": "If the index is greater than the bit width of the variable, an error message will be generated.",
+      "suggested_fix": "Ensure the index is within the valid range for the variable.",
+      "rule_id": "R426"
+    },
+    {
+      "rule": "If the data type does not allow bit accessing, an error message will be generated.",
+      "suggested_fix": "Use a valid data type that supports bit access.",
+      "rule_id": "R427"
+    },
+    {
+      "rule": "If the data type does not allow bit accessing, the following message will be generated: 'Invalid data type '<type>' for direct indexing'.",
+      "suggested_fix": "Ensure the data type supports bit accessing.",
+      "rule_id": "R428"
+    },
+    {
+      "rule": "The BIT data type is only allowed in structures.",
+      "suggested_fix": "Use BIT data types only within structures.",
+      "rule_id": "R429"
+    },
+    {
+      "rule": "Direct addresses must contain information on the memory location, memory format, and offset.",
+      "suggested_fix": "Ensure direct addresses are properly formatted.",
+      "rule_id": "R430"
+    },
+    {
+      "rule": "The offset for a bit address is specified by an integer number followed by a dot and a number for the position of the bit.",
+      "suggested_fix": "Follow the correct syntax for specifying bit addresses.",
+      "rule_id": "R431"
+    },
+    {
+      "rule": "Devices either use byte addressing mode or word addressing mode.",
+      "suggested_fix": "Configure devices according to the addressing mode being used.",
+      "rule_id": "R432"
+    },
+    {
+      "rule": "The range for the second element of the bit address is 0...7 for byte addressing mode and 0...15 for word addressing mode.",
+      "suggested_fix": "Ensure the bit address falls within the correct range based on the addressing mode.",
+      "rule_id": "R433"
+    },
+    {
+      "rule": "Boolean values are allocated bytewise if no explicit single-bit address is specified.",
+      "suggested_fix": "Specify a single-bit address if bytewise allocation is not desired.",
+      "rule_id": "R434"
+    },
+    {
+      "rule": "In ST, a function call can be used as an operand.",
+      "suggested_fix": "Use function calls correctly as operands in expressions.",
+      "rule_id": "R435"
+    },
+    {
+      "rule": "The TIME() function returns the time in milliseconds since the system was started.",
+      "suggested_fix": "Use the TIME() function to retrieve system uptime.",
+      "rule_id": "R436"
+    }
+  ]
+}

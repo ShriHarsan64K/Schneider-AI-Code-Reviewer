@@ -1,0 +1,142 @@
+[
+  {
+    "rule_id": "TS-TYPE-001",
+    "rule": "All function parameters and return types must have explicit type annotations",
+    "severity": "error",
+    "category": "type_safety",
+    "suggested_fix": "Add types: function calculate(voltage: number, current: number): number"
+  },
+  {
+    "rule_id": "TS-TYPE-002",
+    "rule": "Avoid using 'any' type - use specific types or 'unknown' if type is truly unknown",
+    "severity": "error",
+    "category": "type_safety",
+    "suggested_fix": "Replace 'data: any' with proper type definition or 'unknown' for truly dynamic data"
+  },
+  {
+    "rule_id": "TS-TYPE-003",
+    "rule": "Use type aliases or interfaces for complex types instead of inline object types",
+    "severity": "warning",
+    "category": "readability",
+    "suggested_fix": "Create 'interface User { name: string; age: number; }' instead of inline {name: string; age: number}"
+  },
+  {
+    "rule_id": "TS-DOC-001",
+    "rule": "Use TSDoc comments for public APIs, functions, and complex types",
+    "severity": "warning",
+    "category": "documentation",
+    "suggested_fix": "Add /** @param x Description @returns Description */ for exported functions"
+  },
+  {
+    "rule_id": "TS-CONST-001",
+    "rule": "Use const for immutable values and let for mutable ones - never use var",
+    "severity": "error",
+    "category": "best_practice",
+    "suggested_fix": "Replace 'var' with 'const' or 'let' based on whether the variable is reassigned"
+  },
+  {
+    "rule_id": "TS-CONST-002",
+    "rule": "Use 'readonly' modifier for class properties that shouldn't change after initialization",
+    "severity": "warning",
+    "category": "immutability",
+    "suggested_fix": "Mark properties as 'readonly maxVoltage: number;' in class definitions"
+  },
+  {
+    "rule_id": "TS-NAMING-001",
+    "rule": "Use camelCase for variables/functions, PascalCase for classes/interfaces/types, UPPER_CASE for constants",
+    "severity": "warning",
+    "category": "style",
+    "suggested_fix": "Variables: motorSpeed, interfaces: IEnergyMonitor, constants: MAX_VOLTAGE"
+  },
+  {
+    "rule_id": "TS-INTERFACE-001",
+    "rule": "Prefer interfaces over type aliases for object shapes",
+    "severity": "info",
+    "category": "best_practice",
+    "suggested_fix": "Use 'interface User { }' instead of 'type User = { }' for extendable object types"
+  },
+  {
+    "rule_id": "TS-ACCESS-001",
+    "rule": "Use access modifiers (public, private, protected) in classes",
+    "severity": "warning",
+    "category": "encapsulation",
+    "suggested_fix": "Add 'private', 'protected', or 'public' to all class members explicitly"
+  },
+  {
+    "rule_id": "TS-ACCESS-002",
+    "rule": "Make class properties private by default and expose only what's necessary",
+    "severity": "warning",
+    "category": "encapsulation",
+    "suggested_fix": "Change 'voltage: number' to 'private voltage: number' and add public getters if needed"
+  },
+  {
+    "rule_id": "TS-SECURITY-001",
+    "rule": "No hardcoded credentials, API keys, or secrets",
+    "severity": "critical",
+    "category": "security",
+    "suggested_fix": "Use environment variables via process.env or configuration management"
+  },
+  {
+    "rule_id": "TS-NULL-001",
+    "rule": "Enable strict null checks and handle null/undefined explicitly",
+    "severity": "error",
+    "category": "safety",
+    "suggested_fix": "Use optional chaining obj?.prop or null checks if (obj !== null) before accessing properties"
+  },
+  {
+    "rule_id": "TS-ENUM-001",
+    "rule": "Use const enums when possible to reduce bundle size",
+    "severity": "info",
+    "category": "performance",
+    "suggested_fix": "Replace 'enum Status' with 'const enum Status' if enum is only used as values"
+  },
+  {
+    "rule_id": "TS-UNION-001",
+    "rule": "Use union types for variables that can have multiple specific types",
+    "severity": "info",
+    "category": "type_safety",
+    "suggested_fix": "Use 'string | number' instead of 'any' when a value can be either type"
+  },
+  {
+    "rule_id": "TS-GENERIC-001",
+    "rule": "Use generics for reusable type-safe functions and classes",
+    "severity": "warning",
+    "category": "type_safety",
+    "suggested_fix": "Create generic functions: function getValue<T>(key: string): T instead of returning 'any'"
+  },
+  {
+    "rule_id": "TS-ASYNC-001",
+    "rule": "Properly type async functions with Promise<T> return types",
+    "severity": "error",
+    "category": "type_safety",
+    "suggested_fix": "Add return type: async function fetchData(): Promise<User[]>"
+  },
+  {
+    "rule_id": "TS-STRICT-001",
+    "rule": "Enable strict mode in tsconfig.json for maximum type safety",
+    "severity": "warning",
+    "category": "configuration",
+    "suggested_fix": "Set 'strict': true in tsconfig.json compiler options"
+  },
+  {
+    "rule_id": "TS-IMPORT-001",
+    "rule": "Use ES6 imports instead of require() for type safety",
+    "severity": "error",
+    "category": "module_system",
+    "suggested_fix": "Replace 'const x = require('module')' with 'import x from 'module''"
+  },
+  {
+    "rule_id": "TS-ASSERTION-001",
+    "rule": "Avoid type assertions (as Type) unless absolutely necessary",
+    "severity": "warning",
+    "category": "type_safety",
+    "suggested_fix": "Use type guards or proper typing instead of 'as' assertions to maintain type safety"
+  },
+  {
+    "rule_id": "TS-TUPLE-001",
+    "rule": "Use tuple types for fixed-length arrays with specific types",
+    "severity": "info",
+    "category": "type_safety",
+    "suggested_fix": "Use 'type Point = [number, number]' instead of 'number[]' for coordinate pairs"
+  }
+]

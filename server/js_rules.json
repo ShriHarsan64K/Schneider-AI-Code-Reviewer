@@ -1,0 +1,128 @@
+[
+  {
+    "rule_id": "JS-DOC-001",
+    "rule": "Use JSDoc comments for all functions, especially exported ones",
+    "severity": "warning",
+    "category": "documentation",
+    "suggested_fix": "Add /** @param {type} name - description @returns {type} description */ above functions"
+  },
+  {
+    "rule_id": "JS-DOC-002",
+    "rule": "Document complex algorithms and business logic with inline comments",
+    "severity": "warning",
+    "category": "documentation",
+    "suggested_fix": "Add comments explaining why code exists, not just what it does"
+  },
+  {
+    "rule_id": "JS-CONST-001",
+    "rule": "Use const for variables that don't change, let for variables that do - never use var",
+    "severity": "error",
+    "category": "best_practice",
+    "suggested_fix": "Replace 'var x = 5' with 'const x = 5' or 'let x = 5' based on whether it changes"
+  },
+  {
+    "rule_id": "JS-CONST-002",
+    "rule": "Use UPPER_SNAKE_CASE for module-level constants",
+    "severity": "warning",
+    "category": "style",
+    "suggested_fix": "const MAX_VOLTAGE = 1000; not const maxVoltage = 1000;"
+  },
+  {
+    "rule_id": "JS-NAMING-001",
+    "rule": "Use camelCase for variables and functions, PascalCase for classes",
+    "severity": "warning",
+    "category": "style",
+    "suggested_fix": "Functions: calculatePower(), variables: motorSpeed, classes: EnergyMonitor"
+  },
+  {
+    "rule_id": "JS-SEMICOLON-001",
+    "rule": "Always use semicolons to terminate statements",
+    "severity": "warning",
+    "category": "style",
+    "suggested_fix": "Add semicolons at the end of statements: const x = 5; not const x = 5"
+  },
+  {
+    "rule_id": "JS-ARROW-001",
+    "rule": "Use arrow functions for callbacks and short functions",
+    "severity": "info",
+    "category": "modern_js",
+    "suggested_fix": "Replace function callbacks with arrow functions: arr.map(x => x * 2)"
+  },
+  {
+    "rule_id": "JS-TEMPLATE-001",
+    "rule": "Use template literals instead of string concatenation",
+    "severity": "info",
+    "category": "modern_js",
+    "suggested_fix": "Replace 'Hello ' + name with `Hello ${name}`"
+  },
+  {
+    "rule_id": "JS-DESTRUCTURE-001",
+    "rule": "Use destructuring for object and array extraction",
+    "severity": "info",
+    "category": "modern_js",
+    "suggested_fix": "Replace 'const x = obj.x; const y = obj.y;' with 'const {x, y} = obj;'"
+  },
+  {
+    "rule_id": "JS-SECURITY-001",
+    "rule": "No hardcoded API keys, passwords, or secrets",
+    "severity": "critical",
+    "category": "security",
+    "suggested_fix": "Move secrets to environment variables and use process.env.API_KEY or .env files"
+  },
+  {
+    "rule_id": "JS-SECURITY-002",
+    "rule": "Validate and sanitize all user input",
+    "severity": "critical",
+    "category": "security",
+    "suggested_fix": "Add input validation before processing user data to prevent injection attacks"
+  },
+  {
+    "rule_id": "JS-ASYNC-001",
+    "rule": "Use async/await instead of promise chains for better readability",
+    "severity": "info",
+    "category": "modern_js",
+    "suggested_fix": "Replace .then().catch() chains with try { await } catch blocks"
+  },
+  {
+    "rule_id": "JS-ASYNC-002",
+    "rule": "Always handle promise rejections with .catch() or try-catch",
+    "severity": "error",
+    "category": "error_handling",
+    "suggested_fix": "Add .catch(err => handleError(err)) or wrap await in try-catch blocks"
+  },
+  {
+    "rule_id": "JS-EQUALITY-001",
+    "rule": "Use strict equality (=== and !==) instead of loose equality (== and !=)",
+    "severity": "warning",
+    "category": "best_practice",
+    "suggested_fix": "Replace 'if (x == 5)' with 'if (x === 5)' to avoid type coercion bugs"
+  },
+  {
+    "rule_id": "JS-FUNCTION-001",
+    "rule": "Keep functions small and focused - one function, one purpose",
+    "severity": "warning",
+    "category": "design",
+    "suggested_fix": "Break large functions into smaller helper functions with clear responsibilities"
+  },
+  {
+    "rule_id": "JS-NULL-001",
+    "rule": "Check for null/undefined before accessing object properties",
+    "severity": "error",
+    "category": "safety",
+    "suggested_fix": "Add checks: if (obj && obj.prop) or use optional chaining: obj?.prop"
+  },
+  {
+    "rule_id": "JS-SPREAD-001",
+    "rule": "Use spread operator for array/object copies instead of manual iteration",
+    "severity": "info",
+    "category": "modern_js",
+    "suggested_fix": "Replace manual copying with spread: const copy = [...array] or {...object}"
+  },
+  {
+    "rule_id": "JS-CONSOLE-001",
+    "rule": "Remove console.log() statements before production deployment",
+    "severity": "warning",
+    "category": "production",
+    "suggested_fix": "Replace console.log with proper logging library or remove debug statements"
+  }
+]
