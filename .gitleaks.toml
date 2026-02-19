@@ -1,0 +1,8 @@
+[allowlist]
+description = "Ignore intentionally buggy test files used for demo purposes"
+paths = [
+    "tests/test_buggy.py",
+    "tests/test_buggy.js", 
+    "tests/test_buggy.ts",
+    "tests/test_buggy.cpp"
+]
